@@ -1,0 +1,36 @@
+2022-02-03 18:27:41.178226+00:00 [error] <0.29848.0>@ejabberd_sm_sql:init/0:56 Failed to clean 'sm' table: {error,timeout}
+2022-02-03 18:27:41.178540+00:00 [error] <0.29741.0>@supervisor:start_children/2:392 SUPERVISOR REPORT:
+    supervisor: {local,ejabberd_sup}
+    errorContext: start_error
+    reason: db_failure
+    offender: [{pid,undefined},
+               {id,ejabberd_sm},
+               {mfargs,{ejabberd_sm,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,60000},
+               {child_type,worker}]
+
+2022-02-03 18:27:41.178771+00:00 [error] <0.29848.0>@proc_lib:crash_report/4:525 CRASH REPORT:
+  crasher:
+    initial call: ejabberd_sm:init/1
+    pid: <0.29848.0>
+    registered_name: []
+    exception exit: db_failure
+      in function  gen_server:init_it/6 (gen_server.erl, line 407)
+    ancestors: [ejabberd_sup,<0.29623.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.29741.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 6772
+    stack_size: 29
+    reductions: 4564
+  neighbours:
+
+2022-02-03 18:27:41.193908+00:00 [critical] <0.29623.0>@ejabberd_app:start/2:68 Failed to start ejabberd application: {error,
+                                       {shutdown,
+                                        {failed_to_start_child,ejabberd_sm,
+                                         db_failure}}}
