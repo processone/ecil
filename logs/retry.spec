@@ -1,6 +1,30 @@
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
-        {redis,[],[{offline_master_slave,[],[{offline_send_all,[]}]}]},
-        {cases,[offline_send_all_slave]}}.
+        {mssql,[],[{sqlite,[],[{push_master_slave,[],[{push_mam,[]}]}]}]},
+        {cases,[push_mam_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
-        {redis,[],[{offline_master_slave,[],[{offline_flex,[]}]}]},
-        {cases,[offline_flex_master,offline_flex_slave]}}.
+        {mssql,[],[{sqlite,[],[{push_master_slave,[],[{push_sm,[]}]}]}]},
+        {cases,[push_sm_master]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {mssql,[],[{pgsql,[],[{push_master_slave,[],[{push_mam,[]}]}]}]},
+        {cases,[push_mam_slave]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {mssql,[],[{pgsql,[],[{push_master_slave,[],[{push_sm,[]}]}]}]},
+        {cases,[push_sm_master]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {mysql,[],[{push_master_slave,[],[{push_mam,[]}]}]},
+        {cases,[push_mam_slave]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {mysql,[],[{push_master_slave,[],[{push_sm,[]}]}]},
+        {cases,[push_sm_master]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {redis,[],[{push_master_slave,[],[{push_mam,[]}]}]},
+        {cases,[push_mam_slave]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {redis,[],[{push_master_slave,[],[{push_sm,[]}]}]},
+        {cases,[push_sm_master]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {mnesia,[],[{push_master_slave,[],[{push_mam,[]}]}]},
+        {cases,[push_mam_slave]}}.
+{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
+        {mnesia,[],[{push_master_slave,[],[{push_sm,[]}]}]},
+        {cases,[push_sm_master]}}.
