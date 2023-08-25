@@ -1,0 +1,4096 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test ejabberd_SUITE:privacy_deny_sub_to_master result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="ejabberd_suite.src.html#privacy_deny_sub_to_master-1">ejabberd_SUITE:privacy_deny_sub_to_master/1</a> (click for source code)
+
+=== Config value:
+
+    [{event_relay,&lt;0.42903.0&gt;},
+     {watchdog,&lt;0.42902.0&gt;},
+     {server,&lt;&lt;"pgsql.localhost"&gt;&gt;},
+     {server_port,5222},
+     {server_host,"localhost"},
+     {component_port,5270},
+     {s2s_port,5269},
+     {user,&lt;&lt;"test_single!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+     {nick,&lt;&lt;"nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_nick,&lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {room_subject,&lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {certfile,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+     {persistent_room,true},
+     {anonymous,false},
+     {type,client},
+     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+     {stream_version,{1,0}},
+     {stream_id,&lt;&lt;&gt;&gt;},
+     {stream_from,&lt;&lt;&gt;&gt;},
+     {db_xmlns,&lt;&lt;&gt;&gt;},
+     {mechs,[]},
+     {rosterver,false},
+     {lang,&lt;&lt;"en"&gt;&gt;},
+     {base_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+     {receiver,undefined},
+     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {pubsub_node_title,&lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_resource,&lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_resource,&lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {update_sql,false},
+     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+     {tc_logfile,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1692966789@563-prefiks-master-c0e7774.2023-08-25_12.35.20/lib.ejabberd.logs/run.2023-08-25_12.35.20/ejabberd_suite.privacy_deny_sub_to_master.36626.html"},
+     {tc_group_properties,[{name,privacy_deny_sub_to},parallel]},
+     {tc_group_path,[[{name,privacy_master_slave},sequence],
+                     [{name,pgsql},sequence]]},
+     {data_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+     {priv_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1692966789@563-prefiks-master-c0e7774.2023-08-25_12.35.20/lib.ejabberd.logs/run.2023-08-25_12.35.20/log_private/"}]
+
+=== Current directory is "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1692966789@563-prefiks-master-c0e7774.2023-08-25_12.35.20"
+
+=== Started at 2023-08-25 12:41:46
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.917 ***</b><a id=e-52474 class="link-to-entry" href="#e-52474">&#x1f517;</a>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='pgsql.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"pgsql.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"pgsql.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.918 ***</b><a id=e-52477 class="link-to-entry" href="#e-52477">&#x1f517;</a>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='15345476688022321012'
+               version='1.0'
+               xml:lang='en'
+               from='pgsql.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"pgsql.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"pgsql.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"15345476688022321012">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.920 ***</b><a id=e-52478 class="link-to-entry" href="#e-52478">&#x1f517;</a>
+RECV:
+&lt;stream:features>
+  &lt;mechanisms xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>
+    &lt;mechanism>DIGEST-MD5&lt;/mechanism>
+    &lt;mechanism>PLAIN&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-512&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-256&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-1&lt;/mechanism>
+    &lt;mechanism>X-OAUTH2&lt;/mechanism>
+  &lt;/mechanisms>
+  &lt;starttls xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>
+  &lt;register xmlns='http://jabber.org/features/iq-register'/>
+  &lt;auth xmlns='http://jabber.org/features/iq-auth'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#sasl_mechanisms{
+             list =
+                 [<<"DIGEST-MD5">>,<<"PLAIN">>,<<"SCRAM-SHA-512">>,
+                  <<"SCRAM-SHA-256">>,<<"SCRAM-SHA-1">>,<<"X-OAUTH2">>]},
+         #starttls{required = false},
+         #feature_register{},
+         #legacy_auth_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.920 ***</b><a id=e-52479 class="link-to-entry" href="#e-52479">&#x1f517;</a>
+SENT:
+&lt;auth mechanism='PLAIN'
+      xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>dGVzdF9tYXN0ZXIhIyQlXiooKWB+Ky07Xz1bXXt9fFxAcGdzcWwubG9jYWxob3N0AHRlc3RfbWFzdGVyISMkJV4qKClgfistO189W117fXxcAHBhc3N3b3JkIUAjJCVeJiooKSciYH48PistLzs6Xz1bXXt9fFw=&lt;/auth>
+
+#sasl_auth{mechanism = <<"PLAIN">>,
+           text = <<116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,94,
+                    42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,64,
+                    112,103,115,113,108,46,108,111,99,97,108,104,111,115,116,
+                    0,116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,
+                    94,42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,0,
+                    112,97,115,115,119,111,114,100,33,64,35,36,37,94,38,42,40,
+                    41,39,34,96,126,60,62,43,45,47,59,58,95,61,91,93,123,125,
+                    124,92>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.920 ***</b><a id=e-52480 class="link-to-entry" href="#e-52480">&#x1f517;</a>
+RECV:
+&lt;success xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+
+#sasl_success{text = <<>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.921 ***</b><a id=e-52481 class="link-to-entry" href="#e-52481">&#x1f517;</a>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='pgsql.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"pgsql.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"pgsql.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.922 ***</b><a id=e-52483 class="link-to-entry" href="#e-52483">&#x1f517;</a>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='1750943564893007034'
+               version='1.0'
+               xml:lang='en'
+               from='pgsql.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"pgsql.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"pgsql.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"1750943564893007034">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.922 ***</b><a id=e-52484 class="link-to-entry" href="#e-52484">&#x1f517;</a>
+RECV:
+&lt;stream:features>
+  &lt;compression xmlns='http://jabber.org/features/compress'>
+    &lt;method>zlib&lt;/method>
+  &lt;/compression>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'/>
+  &lt;session xmlns='urn:ietf:params:xml:ns:xmpp-session'>
+    &lt;optional/>
+  &lt;/session>
+  &lt;c xmlns='http://jabber.org/protocol/caps'
+     ver='RsZUO/k2xwmyvdC8vIjQDsA1fow='
+     node='http://www.process-one.net/en/ejabberd/'
+     hash='sha-1'/>
+  &lt;sm xmlns='urn:xmpp:sm:2'/>
+  &lt;sm xmlns='urn:xmpp:sm:3'/>
+  &lt;ver xmlns='urn:xmpp:features:rosterver'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#compression{methods = [<<"zlib">>]},
+         #bind{jid = undefined,resource = <<>>},
+         #xmpp_session{optional = true},
+         #caps{
+             node = <<"http://www.process-one.net/en/ejabberd/">>,
+             version = <<"RsZUO/k2xwmyvdC8vIjQDsA1fow=">>,hash = <<"sha-1">>,
+             exts = []},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:2">>},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:3">>},
+         #rosterver_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.922 ***</b><a id=e-52485 class="link-to-entry" href="#e-52485">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='17241510377229514222'
+    xmlns='jabber:client'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;resource>resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/resource>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"17241510377229514222">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#bind{jid = undefined,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.926 ***</b><a id=e-52486 class="link-to-entry" href="#e-52486">&#x1f517;</a>
+RECV:
+&lt;iq type='result'
+    id='17241510377229514222'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;jid>test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/jid>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"17241510377229514222">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,
+    sub_els =
+        [#bind{
+             jid =
+                 #jid{
+                     user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource =
+                         <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+             resource = <<>>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.928 ***</b><a id=e-52487 class="link-to-entry" href="#e-52487">&#x1f517;</a>
+Set list for subscription, to, [iq]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.928 ***</b><a id=e-52488 class="link-to-entry" href="#e-52488">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='10015391674013293635'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='2629156176266208740'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10015391674013293635">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"2629156176266208740">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = true,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.931 ***</b><a id=e-52489 class="link-to-entry" href="#e-52489">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push7039715532086174174'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='2629156176266208740'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push7039715532086174174">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"2629156176266208740">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.931 ***</b><a id=e-52490 class="link-to-entry" href="#e-52490">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='10015391674013293635'/>
+
+#iq{id = <<"10015391674013293635">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.932 ***</b><a id=e-52491 class="link-to-entry" href="#e-52491">&#x1f517;</a>
+SENT:
+&lt;iq type='result'
+    id='push7039715532086174174'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push7039715532086174174">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.932 ***</b><a id=e-52492 class="link-to-entry" href="#e-52492">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='2069325846745050834'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='2629156176266208740'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"2069325846745050834">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"2629156176266208740">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.979 ***</b><a id=e-52493 class="link-to-entry" href="#e-52493">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='2069325846745050834'/>
+
+#iq{id = <<"2069325846745050834">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:46.980 ***</b><a id=e-52498 class="link-to-entry" href="#e-52498">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='8511249917065629361'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"8511249917065629361">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"pgsql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"pgsql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.023 ***</b><a id=e-52500 class="link-to-entry" href="#e-52500">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='12704803943603671203'/>
+
+#presence{id = <<"12704803943603671203">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"pgsql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"pgsql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.027 ***</b><a id=e-52509 class="link-to-entry" href="#e-52509">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='6547039725244576202'/>
+
+#message{id = <<"6547039725244576202">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.071 ***</b><a id=e-52510 class="link-to-entry" href="#e-52510">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='14107829531271324124'/>
+
+#message{id = <<"14107829531271324124">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.071 ***</b><a id=e-52511 class="link-to-entry" href="#e-52511">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='2190833982560195767'/>
+
+#message{id = <<"2190833982560195767">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.071 ***</b><a id=e-52512 class="link-to-entry" href="#e-52512">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='9804649892194492813'/>
+
+#message{id = <<"9804649892194492813">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.071 ***</b><a id=e-52513 class="link-to-entry" href="#e-52513">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='7518942789820645879'/>
+
+#message{id = <<"7518942789820645879">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52514 class="link-to-entry" href="#e-52514">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='11678805597229045427'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"11678805597229045427">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52515 class="link-to-entry" href="#e-52515">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='16452616044489801557'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"16452616044489801557">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52516 class="link-to-entry" href="#e-52516">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='9012538398202203498'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"9012538398202203498">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52517 class="link-to-entry" href="#e-52517">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='5184322759994291732'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"5184322759994291732">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52518 class="link-to-entry" href="#e-52518">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='7010688722573598870'
+         xmlns='jabber:client'/>
+
+#message{id = <<"7010688722573598870">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52519 class="link-to-entry" href="#e-52519">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='517631301470793131'
+         xmlns='jabber:client'/>
+
+#message{id = <<"517631301470793131">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.072 ***</b><a id=e-52520 class="link-to-entry" href="#e-52520">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='782470535250729695'
+         xmlns='jabber:client'/>
+
+#message{id = <<"782470535250729695">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.073 ***</b><a id=e-52521 class="link-to-entry" href="#e-52521">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='5001274012343441936'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5001274012343441936">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.073 ***</b><a id=e-52522 class="link-to-entry" href="#e-52522">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='16876760169106697742'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16876760169106697742">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.121 ***</b><a id=e-52532 class="link-to-entry" href="#e-52532">&#x1f517;</a>
+Set list for subscription, to, [message]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.122 ***</b><a id=e-52533 class="link-to-entry" href="#e-52533">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='17715111140651343468'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='7961589949670081723'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;message/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"17715111140651343468">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"7961589949670081723">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.165 ***</b><a id=e-52534 class="link-to-entry" href="#e-52534">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push18071544229899258406'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='7961589949670081723'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push18071544229899258406">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"7961589949670081723">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.165 ***</b><a id=e-52535 class="link-to-entry" href="#e-52535">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='17715111140651343468'/>
+
+#iq{id = <<"17715111140651343468">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.165 ***</b><a id=e-52536 class="link-to-entry" href="#e-52536">&#x1f517;</a>
+SENT:
+&lt;iq type='result'
+    id='push18071544229899258406'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push18071544229899258406">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.166 ***</b><a id=e-52537 class="link-to-entry" href="#e-52537">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='15837243876322695502'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='7961589949670081723'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"15837243876322695502">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"7961589949670081723">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.211 ***</b><a id=e-52538 class="link-to-entry" href="#e-52538">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='15837243876322695502'/>
+
+#iq{id = <<"15837243876322695502">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.213 ***</b><a id=e-52547 class="link-to-entry" href="#e-52547">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='8906289245168753097'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"8906289245168753097">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"pgsql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"pgsql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.255 ***</b><a id=e-52548 class="link-to-entry" href="#e-52548">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='12096858830011277325'/>
+
+#presence{id = <<"12096858830011277325">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"pgsql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"pgsql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.255 ***</b><a id=e-52549 class="link-to-entry" href="#e-52549">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='7297417149440742208'/>
+
+#iq{id = <<"7297417149440742208">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.255 ***</b><a id=e-52552 class="link-to-entry" href="#e-52552">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='9882163371982617326'/>
+
+#iq{id = <<"9882163371982617326">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.255 ***</b><a id=e-52553 class="link-to-entry" href="#e-52553">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='4602449421096646543'/>
+
+#iq{id = <<"4602449421096646543">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.256 ***</b><a id=e-52554 class="link-to-entry" href="#e-52554">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='10002429344103308116'/>
+
+#iq{id = <<"10002429344103308116">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.257 ***</b><a id=e-52556 class="link-to-entry" href="#e-52556">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='2575265312933587281'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2575265312933587281">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52557 class="link-to-entry" href="#e-52557">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='1854828174139128116'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"1854828174139128116">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52558 class="link-to-entry" href="#e-52558">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14888313175151706044'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14888313175151706044">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52559 class="link-to-entry" href="#e-52559">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='2710449064154995583'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2710449064154995583">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52560 class="link-to-entry" href="#e-52560">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='15419987338164999236'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15419987338164999236">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52561 class="link-to-entry" href="#e-52561">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='16070116279522552757'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16070116279522552757">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52562 class="link-to-entry" href="#e-52562">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='785057684679343896'
+         xmlns='jabber:client'/>
+
+#message{id = <<"785057684679343896">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52563 class="link-to-entry" href="#e-52563">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='12723135195318677807'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12723135195318677807">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.258 ***</b><a id=e-52564 class="link-to-entry" href="#e-52564">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='17511345534794751300'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17511345534794751300">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.304 ***</b><a id=e-52574 class="link-to-entry" href="#e-52574">&#x1f517;</a>
+Set list for subscription, to, [presence_in]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.305 ***</b><a id=e-52575 class="link-to-entry" href="#e-52575">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='10413870922227550284'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='413828236104629754'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10413870922227550284">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"413828236104629754">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = true,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.354 ***</b><a id=e-52576 class="link-to-entry" href="#e-52576">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push10802220003385374849'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='413828236104629754'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push10802220003385374849">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"413828236104629754">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.355 ***</b><a id=e-52577 class="link-to-entry" href="#e-52577">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='10413870922227550284'/>
+
+#iq{id = <<"10413870922227550284">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.355 ***</b><a id=e-52578 class="link-to-entry" href="#e-52578">&#x1f517;</a>
+SENT:
+&lt;iq type='result'
+    id='push10802220003385374849'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push10802220003385374849">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.355 ***</b><a id=e-52579 class="link-to-entry" href="#e-52579">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='695448180686318096'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='413828236104629754'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"695448180686318096">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"413828236104629754">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.400 ***</b><a id=e-52580 class="link-to-entry" href="#e-52580">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='695448180686318096'/>
+
+#iq{id = <<"695448180686318096">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.443 ***</b><a id=e-52592 class="link-to-entry" href="#e-52592">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='13401853052725045157'/>
+
+#iq{id = <<"13401853052725045157">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.443 ***</b><a id=e-52593 class="link-to-entry" href="#e-52593">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='14289389649981955875'/>
+
+#iq{id = <<"14289389649981955875">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.444 ***</b><a id=e-52594 class="link-to-entry" href="#e-52594">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='15754981644270055318'/>
+
+#iq{id = <<"15754981644270055318">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.444 ***</b><a id=e-52595 class="link-to-entry" href="#e-52595">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='8936563259309036952'/>
+
+#iq{id = <<"8936563259309036952">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.444 ***</b><a id=e-52596 class="link-to-entry" href="#e-52596">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='16541099202558244906'/>
+
+#message{id = <<"16541099202558244906">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.444 ***</b><a id=e-52597 class="link-to-entry" href="#e-52597">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='10130413405572280997'/>
+
+#message{id = <<"10130413405572280997">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.444 ***</b><a id=e-52598 class="link-to-entry" href="#e-52598">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='5344911727532056716'/>
+
+#message{id = <<"5344911727532056716">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.444 ***</b><a id=e-52599 class="link-to-entry" href="#e-52599">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='681872389874681117'/>
+
+#message{id = <<"681872389874681117">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.445 ***</b><a id=e-52600 class="link-to-entry" href="#e-52600">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='4594324693650703448'/>
+
+#message{id = <<"4594324693650703448">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.445 ***</b><a id=e-52601 class="link-to-entry" href="#e-52601">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='2442005380984478607'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2442005380984478607">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.445 ***</b><a id=e-52602 class="link-to-entry" href="#e-52602">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='5134428095093062130'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"5134428095093062130">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.445 ***</b><a id=e-52603 class="link-to-entry" href="#e-52603">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='1634337612315837174'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"1634337612315837174">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.445 ***</b><a id=e-52604 class="link-to-entry" href="#e-52604">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='7058012655706044907'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"7058012655706044907">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.445 ***</b><a id=e-52605 class="link-to-entry" href="#e-52605">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='12989222200787755671'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12989222200787755671">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.446 ***</b><a id=e-52607 class="link-to-entry" href="#e-52607">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='9361287294405573178'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9361287294405573178">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.446 ***</b><a id=e-52608 class="link-to-entry" href="#e-52608">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='14603328652884476551'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14603328652884476551">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.446 ***</b><a id=e-52609 class="link-to-entry" href="#e-52609">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='7514334045466164477'
+         xmlns='jabber:client'/>
+
+#message{id = <<"7514334045466164477">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.446 ***</b><a id=e-52610 class="link-to-entry" href="#e-52610">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='3523964881962157602'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3523964881962157602">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.488 ***</b><a id=e-52619 class="link-to-entry" href="#e-52619">&#x1f517;</a>
+Set list for subscription, to, [presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.488 ***</b><a id=e-52620 class="link-to-entry" href="#e-52620">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='2700087889179211051'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1134602920510214054'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-out/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"2700087889179211051">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"1134602920510214054">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.491 ***</b><a id=e-52621 class="link-to-entry" href="#e-52621">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push1316423149819419378'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1134602920510214054'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push1316423149819419378">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"1134602920510214054">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.491 ***</b><a id=e-52622 class="link-to-entry" href="#e-52622">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='2700087889179211051'/>
+
+#iq{id = <<"2700087889179211051">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.492 ***</b><a id=e-52623 class="link-to-entry" href="#e-52623">&#x1f517;</a>
+SENT:
+&lt;iq type='result'
+    id='push1316423149819419378'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push1316423149819419378">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.492 ***</b><a id=e-52624 class="link-to-entry" href="#e-52624">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='7067898409975258144'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='1134602920510214054'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"7067898409975258144">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"1134602920510214054">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.535 ***</b><a id=e-52625 class="link-to-entry" href="#e-52625">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='7067898409975258144'/>
+
+#iq{id = <<"7067898409975258144">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.536 ***</b><a id=e-52632 class="link-to-entry" href="#e-52632">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='9059484448808775448'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"9059484448808775448">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"pgsql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"pgsql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.584 ***</b><a id=e-52638 class="link-to-entry" href="#e-52638">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='7397428556026613112'/>
+
+#presence{id = <<"7397428556026613112">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"pgsql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"pgsql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.584 ***</b><a id=e-52639 class="link-to-entry" href="#e-52639">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='8289890364911947134'/>
+
+#iq{id = <<"8289890364911947134">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52640 class="link-to-entry" href="#e-52640">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='1621923310818994612'/>
+
+#iq{id = <<"1621923310818994612">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52641 class="link-to-entry" href="#e-52641">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='13884945969753797912'/>
+
+#iq{id = <<"13884945969753797912">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52642 class="link-to-entry" href="#e-52642">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='6925971712946845416'/>
+
+#iq{id = <<"6925971712946845416">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52643 class="link-to-entry" href="#e-52643">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='16695751460446616321'/>
+
+#message{id = <<"16695751460446616321">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52644 class="link-to-entry" href="#e-52644">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='13881989671852819848'/>
+
+#message{id = <<"13881989671852819848">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52645 class="link-to-entry" href="#e-52645">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='3717291324568179666'/>
+
+#message{id = <<"3717291324568179666">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.585 ***</b><a id=e-52646 class="link-to-entry" href="#e-52646">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='5311942691189824379'/>
+
+#message{id = <<"5311942691189824379">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.586 ***</b><a id=e-52647 class="link-to-entry" href="#e-52647">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='4558969011311113510'/>
+
+#message{id = <<"4558969011311113510">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"pgsql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"pgsql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.586 ***</b><a id=e-52648 class="link-to-entry" href="#e-52648">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='637393497708381336'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"637393497708381336">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.586 ***</b><a id=e-52649 class="link-to-entry" href="#e-52649">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='637393497708381336'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"637393497708381336">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.586 ***</b><a id=e-52650 class="link-to-entry" href="#e-52650">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='5378780618395740044'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"5378780618395740044">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.587 ***</b><a id=e-52651 class="link-to-entry" href="#e-52651">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='5378780618395740044'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"5378780618395740044">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.587 ***</b><a id=e-52652 class="link-to-entry" href="#e-52652">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='9844217776612254239'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"9844217776612254239">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.587 ***</b><a id=e-52653 class="link-to-entry" href="#e-52653">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='12077560391260768145'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12077560391260768145">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52654 class="link-to-entry" href="#e-52654">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2138801695872648196'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2138801695872648196">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52655 class="link-to-entry" href="#e-52655">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='13350668241511999832'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13350668241511999832">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52656 class="link-to-entry" href="#e-52656">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='17158762420602554153'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17158762420602554153">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52657 class="link-to-entry" href="#e-52657">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='10788106020986607984'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10788106020986607984">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52658 class="link-to-entry" href="#e-52658">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='16777553509654247'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16777553509654247">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52659 class="link-to-entry" href="#e-52659">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='15501942478359762610'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15501942478359762610">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.588 ***</b><a id=e-52660 class="link-to-entry" href="#e-52660">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='12085860609415554006'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12085860609415554006">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.633 ***</b><a id=e-52670 class="link-to-entry" href="#e-52670">&#x1f517;</a>
+Set list for subscription, to, [iq,message,presence_in,presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.634 ***</b><a id=e-52671 class="link-to-entry" href="#e-52671">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='4230303104226250263'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1534279218295428653'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+        &lt;message/>
+        &lt;presence-out/>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"4230303104226250263">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"1534279218295428653">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = true,
+                               presence_in = true,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.681 ***</b><a id=e-52672 class="link-to-entry" href="#e-52672">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push1526056368185758026'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1534279218295428653'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push1526056368185758026">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"1534279218295428653">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.681 ***</b><a id=e-52673 class="link-to-entry" href="#e-52673">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='4230303104226250263'/>
+
+#iq{id = <<"4230303104226250263">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.681 ***</b><a id=e-52674 class="link-to-entry" href="#e-52674">&#x1f517;</a>
+SENT:
+&lt;iq type='result'
+    id='push1526056368185758026'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push1526056368185758026">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.682 ***</b><a id=e-52675 class="link-to-entry" href="#e-52675">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='5271657086721866893'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='1534279218295428653'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"5271657086721866893">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"1534279218295428653">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.723 ***</b><a id=e-52676 class="link-to-entry" href="#e-52676">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='5271657086721866893'/>
+
+#iq{id = <<"5271657086721866893">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.812 ***</b><a id=e-52690 class="link-to-entry" href="#e-52690">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='866998812792546386'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"866998812792546386">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.813 ***</b><a id=e-52691 class="link-to-entry" href="#e-52691">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='866998812792546386'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"866998812792546386">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.813 ***</b><a id=e-52692 class="link-to-entry" href="#e-52692">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='6107254581803804852'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"6107254581803804852">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.815 ***</b><a id=e-52693 class="link-to-entry" href="#e-52693">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='6107254581803804852'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"6107254581803804852">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.815 ***</b><a id=e-52694 class="link-to-entry" href="#e-52694">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='5749407468683531209'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"5749407468683531209">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.815 ***</b><a id=e-52695 class="link-to-entry" href="#e-52695">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='17827298591856566754'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"17827298591856566754">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.815 ***</b><a id=e-52696 class="link-to-entry" href="#e-52696">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2045699083025793828'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2045699083025793828">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.816 ***</b><a id=e-52697 class="link-to-entry" href="#e-52697">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='5223020335830248944'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"5223020335830248944">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.816 ***</b><a id=e-52698 class="link-to-entry" href="#e-52698">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='217067600548299644'
+         xmlns='jabber:client'/>
+
+#message{id = <<"217067600548299644">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.816 ***</b><a id=e-52699 class="link-to-entry" href="#e-52699">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='11532951717691135150'
+         xmlns='jabber:client'/>
+
+#message{id = <<"11532951717691135150">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.816 ***</b><a id=e-52700 class="link-to-entry" href="#e-52700">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='17725128411201013353'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17725128411201013353">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.816 ***</b><a id=e-52701 class="link-to-entry" href="#e-52701">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='13082240209004698338'
+         xmlns='jabber:client'/>
+
+#message{id = <<"13082240209004698338">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.816 ***</b><a id=e-52702 class="link-to-entry" href="#e-52702">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='5730844344051403165'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5730844344051403165">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.860 ***</b><a id=e-52712 class="link-to-entry" href="#e-52712">&#x1f517;</a>
+Set list for subscription, to, []
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.860 ***</b><a id=e-52713 class="link-to-entry" href="#e-52713">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='8702982906757553194'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13781849620504741080'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'/>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"8702982906757553194">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"13781849620504741080">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.864 ***</b><a id=e-52714 class="link-to-entry" href="#e-52714">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push14159678462831125292'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13781849620504741080'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push14159678462831125292">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"13781849620504741080">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.865 ***</b><a id=e-52715 class="link-to-entry" href="#e-52715">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='8702982906757553194'/>
+
+#iq{id = <<"8702982906757553194">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.865 ***</b><a id=e-52716 class="link-to-entry" href="#e-52716">&#x1f517;</a>
+SENT:
+&lt;iq type='result'
+    id='push14159678462831125292'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push14159678462831125292">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.865 ***</b><a id=e-52717 class="link-to-entry" href="#e-52717">&#x1f517;</a>
+SENT:
+&lt;iq type='set'
+    id='2425101217617171353'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='13781849620504741080'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"2425101217617171353">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"13781849620504741080">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.908 ***</b><a id=e-52718 class="link-to-entry" href="#e-52718">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='result'
+    id='2425101217617171353'/>
+
+#iq{id = <<"2425101217617171353">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"pgsql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.996 ***</b><a id=e-52732 class="link-to-entry" href="#e-52732">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='11017516940840596463'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"11017516940840596463">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.996 ***</b><a id=e-52733 class="link-to-entry" href="#e-52733">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='11017516940840596463'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"11017516940840596463">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.996 ***</b><a id=e-52734 class="link-to-entry" href="#e-52734">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='11909382834564766988'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"11909382834564766988">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.997 ***</b><a id=e-52735 class="link-to-entry" href="#e-52735">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='11909382834564766988'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"11909382834564766988">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.997 ***</b><a id=e-52736 class="link-to-entry" href="#e-52736">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='11678809544009076298'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"11678809544009076298">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.997 ***</b><a id=e-52737 class="link-to-entry" href="#e-52737">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='14511321749793924745'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14511321749793924745">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:47.997 ***</b><a id=e-52738 class="link-to-entry" href="#e-52738">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='1344003556429118219'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"1344003556429118219">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.038 ***</b><a id=e-52739 class="link-to-entry" href="#e-52739">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='1344003556429118219'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"1344003556429118219">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.039 ***</b><a id=e-52740 class="link-to-entry" href="#e-52740">&#x1f517;</a>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='13658545941233186337'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"13658545941233186337">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"pgsql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"pgsql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.039 ***</b><a id=e-52741 class="link-to-entry" href="#e-52741">&#x1f517;</a>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='13658545941233186337'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"13658545941233186337">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.040 ***</b><a id=e-52742 class="link-to-entry" href="#e-52742">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='17285838558239652841'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17285838558239652841">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.040 ***</b><a id=e-52743 class="link-to-entry" href="#e-52743">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='15781832211600794199'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15781832211600794199">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.084 ***</b><a id=e-52744 class="link-to-entry" href="#e-52744">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='15781832211600794199'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"15781832211600794199">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.084 ***</b><a id=e-52745 class="link-to-entry" href="#e-52745">&#x1f517;</a>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='3151511741040583769'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3151511741040583769">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"pgsql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"pgsql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.085 ***</b><a id=e-52746 class="link-to-entry" href="#e-52746">&#x1f517;</a>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='3151511741040583769'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"3151511741040583769">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.085 ***</b><a id=e-52747 class="link-to-entry" href="#e-52747">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='2521866106773711053'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"2521866106773711053">>,type = error,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.085 ***</b><a id=e-52748 class="link-to-entry" href="#e-52748">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribe'
+          id='10750246033416136675'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"10750246033416136675">>,type = subscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.086 ***</b><a id=e-52749 class="link-to-entry" href="#e-52749">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribed'
+          id='14633760861998013057'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14633760861998013057">>,type = subscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.128 ***</b><a id=e-52750 class="link-to-entry" href="#e-52750">&#x1f517;</a>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='10750246033416136675'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"10750246033416136675">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.132 ***</b><a id=e-52751 class="link-to-entry" href="#e-52751">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push17843163190237978859'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='154236a12c16066635a10185d6779ad41a5372be'>
+    &lt;item subscription='both'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push17843163190237978859">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"pgsql.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"pgsql.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = both,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"154236a12c16066635a10185d6779ad41a5372be">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.132 ***</b><a id=e-52752 class="link-to-entry" href="#e-52752">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribe'
+          id='7929247442379268828'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"7929247442379268828">>,type = unsubscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.139 ***</b><a id=e-52753 class="link-to-entry" href="#e-52753">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push1898963830121315177'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='862a55cb5026c882d044582e3948acdfacf0637a'>
+    &lt;item subscription='from'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push1898963830121315177">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"pgsql.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"pgsql.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = from,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"862a55cb5026c882d044582e3948acdfacf0637a">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.139 ***</b><a id=e-52755 class="link-to-entry" href="#e-52755">&#x1f517;</a>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribed'
+          id='15619521614438579542'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"15619521614438579542">>,type = unsubscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"pgsql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"pgsql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2023-08-25 12:41:48.145 ***</b><a id=e-52756 class="link-to-entry" href="#e-52756">&#x1f517;</a>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'
+    type='set'
+    id='push11524283259553242956'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='4249c4b69e060f54e00a96e93a90ff841d4137e4'>
+    &lt;item subscription='none'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@pgsql.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push11524283259553242956">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"pgsql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"pgsql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"pgsql.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"pgsql.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = none,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"4249c4b69e060f54e00a96e93a90ff841d4137e4">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2023-08-25 12:41:48
+=== successfully completed test case
+=== === Returned value: [{receiver,undefined},
+                     {rosterver,true},
+                     {sm,true},
+                     {compression,[&lt;&lt;"zlib"&gt;&gt;]},
+                     {stream_id,&lt;&lt;"1750943564893007034"&gt;&gt;},
+                     {sasl,#Fun&lt;suite.6.122050307&gt;},
+                     {legacy_auth,true},
+                     {register,true},
+                     {starttls,true},
+                     {mechs,
+                         [&lt;&lt;"DIGEST-MD5"&gt;&gt;,&lt;&lt;"PLAIN"&gt;&gt;,&lt;&lt;"SCRAM-SHA-512"&gt;&gt;,
+                          &lt;&lt;"SCRAM-SHA-256"&gt;&gt;,&lt;&lt;"SCRAM-SHA-1"&gt;&gt;,
+                          &lt;&lt;"X-OAUTH2"&gt;&gt;]},
+                     {peer,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"pgsql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"pgsql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {peer_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {user,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+                     {slave,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"pgsql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"pgsql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {master,
+                         {jid,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"pgsql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"pgsql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {mode,master},
+                     {watchdog,&lt;0.42915.0&gt;},
+                     {event_relay,&lt;0.42903.0&gt;},
+                     {server,&lt;&lt;"pgsql.localhost"&gt;&gt;},
+                     {server_port,5222},
+                     {server_host,"localhost"},
+                     {component_port,5270},
+                     {s2s_port,5269},
+                     {master_nick,
+                         &lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {room_subject,
+                         &lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {certfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+                     {persistent_room,true},
+                     {anonymous,false},
+                     {type,client},
+                     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+                     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+                     {stream_version,{1,0}},
+                     {stream_from,&lt;&lt;&gt;&gt;},
+                     {db_xmlns,&lt;&lt;&gt;&gt;},
+                     {lang,&lt;&lt;"en"&gt;&gt;},
+                     {base_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+                     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {pubsub_node_title,
+                         &lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {master_resource,
+                         &lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_resource,
+                         &lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {update_sql,false},
+                     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+                     {tc_logfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1692966789@563-prefiks-master-c0e7774.2023-08-25_12.35.20/lib.ejabberd.logs/run.2023-08-25_12.35.20/ejabberd_suite.privacy_deny_sub_to_master.36626.html"},
+                     {tc_group_properties,
+                         [{name,privacy_deny_sub_to},parallel]},
+                     {tc_group_path,
+                         [[{name,privacy_master_slave},sequence],
+                          [{name,pgsql},sequence]]},
+                     {data_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+                     {priv_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1692966789@563-prefiks-master-c0e7774.2023-08-25_12.35.20/lib.ejabberd.logs/run.2023-08-25_12.35.20/log_private/"}]
