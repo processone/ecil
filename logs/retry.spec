@@ -1,6 +1,4 @@
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
-        {mnesia,[],[{offline_master_slave,[],[{offline_send_all,[]}]}]},
-        {cases,[offline_send_all_slave]}}.
-{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
-        {mnesia,[],[{offline_master_slave,[],[{offline_flex,[]}]}]},
-        {cases,[offline_flex_master,offline_flex_slave]}}.
+        {no_db,[],
+               [{muc_master_slave,[],[{muc_invite_password_protected,[]}]}]},
+        {cases,[muc_invite_password_protected_slave]}}.
