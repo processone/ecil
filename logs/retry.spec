@@ -1,9 +1,5 @@
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],
-               [{pgsql,[],
-                       [{offline_master_slave,[],[{offline_send_all,[]}]}]}]},
-        {cases,[offline_send_all_slave]}}.
-{groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
-        {mssql,[],
-               [{pgsql,[],[{offline_master_slave,[],[{offline_flex,[]}]}]}]},
-        {cases,[offline_flex_master,offline_flex_slave]}}.
+               [{sqlite,[],
+                        [{roster_master_slave,[],[{roster_subscribe,[]}]}]}]},
+        {cases,[roster_subscribe_slave,roster_subscribe_master]}}.
