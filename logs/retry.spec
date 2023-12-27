@@ -24,7 +24,7 @@
         {mssql,[],
                [{sqlite,[],
                         [{mam_master_slave,[],[{mam_query_rsm_before,[]}]}]}]},
-        {cases,[mam_query_rsm_before_slave,mam_query_rsm_before_master]}}.
+        {cases,[mam_query_rsm_before_master,mam_query_rsm_before_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],
                [{sqlite,[],
@@ -36,7 +36,7 @@
         {cases,[mam_query_rsm_max_master,mam_query_rsm_max_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],[{sqlite,[],[{mam_master_slave,[],[{mam_query_with,[]}]}]}]},
-        {cases,[mam_query_with_slave,mam_query_with_master]}}.
+        {cases,[mam_query_with_master,mam_query_with_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],[{sqlite,[],[{mam_master_slave,[],[{mam_query_all,[]}]}]}]},
         {cases,[mam_query_all_master,mam_query_all_slave]}}.
@@ -75,7 +75,7 @@
         {mssql,[],
                [{pgsql,[],
                        [{mam_master_slave,[],[{mam_query_rsm_before,[]}]}]}]},
-        {cases,[mam_query_rsm_before_slave,mam_query_rsm_before_master]}}.
+        {cases,[mam_query_rsm_before_master,mam_query_rsm_before_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],
                [{pgsql,[],
@@ -87,14 +87,14 @@
         {cases,[mam_query_rsm_max_master,mam_query_rsm_max_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],[{pgsql,[],[{mam_master_slave,[],[{mam_query_with,[]}]}]}]},
-        {cases,[mam_query_with_slave,mam_query_with_master]}}.
+        {cases,[mam_query_with_master,mam_query_with_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],[{pgsql,[],[{mam_master_slave,[],[{mam_query_all,[]}]}]}]},
-        {cases,[mam_query_all_slave,mam_query_all_master]}}.
+        {cases,[mam_query_all_master,mam_query_all_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
     {mssql,[],
         [{pgsql,[],[{offline_master_slave,[],[{offline_mucsub_mam,[]}]}]}]},
-    {cases,[offline_mucsub_mam_slave]}}.
+    {cases,[offline_mucsub_mam_master,offline_mucsub_mam_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],
                [{pgsql,[],
@@ -123,7 +123,7 @@
         {cases,[mam_query_rsm_before_slave,mam_query_rsm_before_master]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mysql,[],[{mam_master_slave,[],[{mam_query_rsm_after,[]}]}]},
-        {cases,[mam_query_rsm_after_slave,mam_query_rsm_after_master]}}.
+        {cases,[mam_query_rsm_after_master,mam_query_rsm_after_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mysql,[],[{mam_master_slave,[],[{mam_query_rsm_max,[]}]}]},
         {cases,[mam_query_rsm_max_master,mam_query_rsm_max_slave]}}.
@@ -135,7 +135,7 @@
         {cases,[mam_query_all_master,mam_query_all_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mysql,[],[{offline_master_slave,[],[{offline_mucsub_mam,[]}]}]},
-        {cases,[offline_mucsub_mam_slave]}}.
+        {cases,[offline_mucsub_mam_master,offline_mucsub_mam_slave]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mysql,[],[{offline_master_slave,[],[{offline_from_mam,[]}]}]},
         {cases,[offline_from_mam_slave]}}.
