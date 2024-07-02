@@ -1,0 +1,4098 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test ejabberd_SUITE:privacy_deny_sub_to_master result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="ejabberd_suite.src.html#privacy_deny_sub_to_master-1">ejabberd_SUITE:privacy_deny_sub_to_master/1</a> (click for source code)
+
+=== Config value:
+
+    [{event_relay,&lt;0.32126.0&gt;},
+     {watchdog,&lt;0.32125.0&gt;},
+     {server,&lt;&lt;"sqlite.localhost"&gt;&gt;},
+     {server_port,5222},
+     {server_host,"localhost"},
+     {component_port,5270},
+     {s2s_port,5269},
+     {user,&lt;&lt;"test_single!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+     {nick,&lt;&lt;"nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_nick,&lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {room_subject,&lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {certfile,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+     {persistent_room,true},
+     {anonymous,false},
+     {type,client},
+     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+     {stream_version,{1,0}},
+     {stream_id,&lt;&lt;&gt;&gt;},
+     {stream_from,&lt;&lt;&gt;&gt;},
+     {db_xmlns,&lt;&lt;&gt;&gt;},
+     {mechs,[]},
+     {rosterver,false},
+     {lang,&lt;&lt;"en"&gt;&gt;},
+     {base_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+     {receiver,undefined},
+     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {pubsub_node_title,&lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_resource,&lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_resource,&lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {update_sql,false},
+     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+     {tc_logfile,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/ejabberd_suite.privacy_deny_sub_to_master.46276.html"},
+     {tc_group_properties,[{name,privacy_deny_sub_to},parallel]},
+     {tc_group_path,[[{name,privacy_master_slave},sequence],
+                     [{name,sqlite},sequence]]},
+     {data_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+     {priv_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/log_private/"}]
+
+=== Current directory is "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57"
+
+=== Started at 2024-07-02 10:56:05
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.614 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='sqlite.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"sqlite.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"sqlite.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.616 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='8782622586075444658'
+               version='1.0'
+               xml:lang='en'
+               from='sqlite.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"sqlite.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"sqlite.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"8782622586075444658">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.616 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;mechanisms xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>
+    &lt;mechanism>DIGEST-MD5&lt;/mechanism>
+    &lt;mechanism>PLAIN&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-512&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-256&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-1&lt;/mechanism>
+    &lt;mechanism>X-OAUTH2&lt;/mechanism>
+  &lt;/mechanisms>
+  &lt;starttls xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>
+  &lt;register xmlns='http://jabber.org/features/iq-register'/>
+  &lt;auth xmlns='http://jabber.org/features/iq-auth'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#sasl_mechanisms{
+             list =
+                 [<<"DIGEST-MD5">>,<<"PLAIN">>,<<"SCRAM-SHA-512">>,
+                  <<"SCRAM-SHA-256">>,<<"SCRAM-SHA-1">>,<<"X-OAUTH2">>]},
+         #starttls{required = false},
+         #feature_register{},
+         #legacy_auth_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.616 ***</b>
+SENT:
+&lt;auth mechanism='PLAIN'
+      xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>dGVzdF9tYXN0ZXIhIyQlXiooKWB+Ky07Xz1bXXt9fFxAc3FsaXRlLmxvY2FsaG9zdAB0ZXN0X21hc3RlciEjJCVeKigpYH4rLTtfPVtde318XABwYXNzd29yZCFAIyQlXiYqKCknImB+PD4rLS87Ol89W117fXxc&lt;/auth>
+
+#sasl_auth{mechanism = <<"PLAIN">>,
+           text = <<116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,94,
+                    42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,64,
+                    115,113,108,105,116,101,46,108,111,99,97,108,104,111,115,
+                    116,0,116,101,115,116,95,109,97,115,116,101,114,33,35,36,
+                    37,94,42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,
+                    0,112,97,115,115,119,111,114,100,33,64,35,36,37,94,38,42,
+                    40,41,39,34,96,126,60,62,43,45,47,59,58,95,61,91,93,123,
+                    125,124,92>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.617 ***</b>
+RECV:
+&lt;success xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+
+#sasl_success{text = <<>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.617 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='sqlite.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"sqlite.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"sqlite.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.618 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='4059361614623661428'
+               version='1.0'
+               xml:lang='en'
+               from='sqlite.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"sqlite.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"sqlite.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"4059361614623661428">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.618 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;compression xmlns='http://jabber.org/features/compress'>
+    &lt;method>zlib&lt;/method>
+  &lt;/compression>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'/>
+  &lt;session xmlns='urn:ietf:params:xml:ns:xmpp-session'>
+    &lt;optional/>
+  &lt;/session>
+  &lt;c xmlns='http://jabber.org/protocol/caps'
+     ver='RsZUO/k2xwmyvdC8vIjQDsA1fow='
+     node='http://www.process-one.net/en/ejabberd/'
+     hash='sha-1'/>
+  &lt;sm xmlns='urn:xmpp:sm:2'/>
+  &lt;sm xmlns='urn:xmpp:sm:3'/>
+  &lt;ver xmlns='urn:xmpp:features:rosterver'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#compression{methods = [<<"zlib">>]},
+         #bind{jid = undefined,resource = <<>>},
+         #xmpp_session{optional = true},
+         #caps{
+             node = <<"http://www.process-one.net/en/ejabberd/">>,
+             version = <<"RsZUO/k2xwmyvdC8vIjQDsA1fow=">>,hash = <<"sha-1">>,
+             exts = []},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:2">>},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:3">>},
+         #rosterver_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.618 ***</b>
+SENT:
+&lt;iq type='set'
+    id='5173957534319038689'
+    xmlns='jabber:client'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;resource>resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/resource>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"5173957534319038689">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#bind{jid = undefined,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.623 ***</b>
+RECV:
+&lt;iq type='result'
+    id='5173957534319038689'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;jid>test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/jid>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"5173957534319038689">>,type = result,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#bind{
+             jid =
+                 #jid{
+                     user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource =
+                         <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+             resource = <<>>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.627 ***</b>
+Set list for subscription, to, [iq]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.627 ***</b>
+SENT:
+&lt;iq type='set'
+    id='15125814496462650088'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='53199532900286018'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"15125814496462650088">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"53199532900286018">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = true,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.630 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push6287493659009560524'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='53199532900286018'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push6287493659009560524">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"53199532900286018">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.630 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='15125814496462650088'/>
+
+#iq{id = <<"15125814496462650088">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.630 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push6287493659009560524'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push6287493659009560524">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.630 ***</b>
+SENT:
+&lt;iq type='set'
+    id='8996089294083422157'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='53199532900286018'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"8996089294083422157">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"53199532900286018">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.673 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='8996089294083422157'/>
+
+#iq{id = <<"8996089294083422157">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.674 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='12230630207232392522'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"12230630207232392522">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"sqlite.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"sqlite.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.716 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='11476741823929013296'/>
+
+#presence{id = <<"11476741823929013296">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"sqlite.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"sqlite.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.719 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='11460536480040451644'/>
+
+#message{id = <<"11460536480040451644">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.760 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='1159544253724888155'/>
+
+#message{id = <<"1159544253724888155">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.761 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='7157146279276284885'/>
+
+#message{id = <<"7157146279276284885">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.761 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='11340421644928424944'/>
+
+#message{id = <<"11340421644928424944">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.761 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='7150061859520079265'/>
+
+#message{id = <<"7150061859520079265">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.761 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='12884310640236475718'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12884310640236475718">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.761 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='11634904037602625393'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"11634904037602625393">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.761 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='8283258252006956326'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"8283258252006956326">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.762 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='2337099606100801099'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2337099606100801099">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.762 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='7710150819420907742'
+         xmlns='jabber:client'/>
+
+#message{id = <<"7710150819420907742">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.762 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='13603648000329535766'
+         xmlns='jabber:client'/>
+
+#message{id = <<"13603648000329535766">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.762 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='16584081878426505103'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16584081878426505103">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.762 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='471614958210242422'
+         xmlns='jabber:client'/>
+
+#message{id = <<"471614958210242422">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.762 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='15478889611193499863'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15478889611193499863">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.806 ***</b>
+Set list for subscription, to, [message]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.806 ***</b>
+SENT:
+&lt;iq type='set'
+    id='8143132213907713151'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='14495023028485549941'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;message/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"8143132213907713151">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"14495023028485549941">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.809 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push4560541360944132097'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='14495023028485549941'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push4560541360944132097">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"14495023028485549941">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.809 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='8143132213907713151'/>
+
+#iq{id = <<"8143132213907713151">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.809 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push4560541360944132097'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push4560541360944132097">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.809 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10191987575156265301'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='14495023028485549941'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10191987575156265301">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"14495023028485549941">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.853 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='10191987575156265301'/>
+
+#iq{id = <<"10191987575156265301">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.854 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='13582361675409950932'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"13582361675409950932">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"sqlite.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"sqlite.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.897 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='11766137374064248173'/>
+
+#presence{id = <<"11766137374064248173">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"sqlite.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"sqlite.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.897 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='7883090315382484320'/>
+
+#iq{id = <<"7883090315382484320">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.897 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='13995027156410900206'/>
+
+#iq{id = <<"13995027156410900206">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.897 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2892886099733414976'/>
+
+#iq{id = <<"2892886099733414976">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.897 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='2255183090776100280'/>
+
+#iq{id = <<"2255183090776100280">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.898 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='18149280171816076415'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"18149280171816076415">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.898 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='4249109333918064039'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"4249109333918064039">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.898 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='16581634506542997848'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"16581634506542997848">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.899 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='15978306592833412001'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"15978306592833412001">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.899 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='577231988092452360'
+         xmlns='jabber:client'/>
+
+#message{id = <<"577231988092452360">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.899 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='12043429716605541768'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12043429716605541768">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.899 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='12060250965555044258'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12060250965555044258">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.899 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='14547472968553597242'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14547472968553597242">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.899 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='6899131282922564482'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6899131282922564482">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.942 ***</b>
+Set list for subscription, to, [presence_in]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.942 ***</b>
+SENT:
+&lt;iq type='set'
+    id='14562241212472081583'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13836955819347012450'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"14562241212472081583">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"13836955819347012450">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = true,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.944 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push9517957399450712253'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13836955819347012450'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push9517957399450712253">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"13836955819347012450">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.945 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='14562241212472081583'/>
+
+#iq{id = <<"14562241212472081583">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.945 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push9517957399450712253'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push9517957399450712253">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.945 ***</b>
+SENT:
+&lt;iq type='set'
+    id='3059220060937935973'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='13836955819347012450'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"3059220060937935973">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"13836955819347012450">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:05.988 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='3059220060937935973'/>
+
+#iq{id = <<"3059220060937935973">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.033 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='7823542554174297050'/>
+
+#iq{id = <<"7823542554174297050">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.033 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='6515176875090991730'/>
+
+#iq{id = <<"6515176875090991730">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.033 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='1500847748704303488'/>
+
+#iq{id = <<"1500847748704303488">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='11468638896204395827'/>
+
+#iq{id = <<"11468638896204395827">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='11083379464743201752'/>
+
+#message{id = <<"11083379464743201752">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='2657829154612586701'/>
+
+#message{id = <<"2657829154612586701">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='2570320769771740883'/>
+
+#message{id = <<"2570320769771740883">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='11348298800430354640'/>
+
+#message{id = <<"11348298800430354640">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='17569775815572458093'/>
+
+#message{id = <<"17569775815572458093">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.034 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='15093957116971431229'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"15093957116971431229">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='1588198629672752660'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"1588198629672752660">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='17609263040345930822'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"17609263040345930822">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='13304818157057910673'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13304818157057910673">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='9216146248042441444'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9216146248042441444">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='14652167399260792804'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14652167399260792804">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='11502588626531726569'
+         xmlns='jabber:client'/>
+
+#message{id = <<"11502588626531726569">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='3262331572496502774'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3262331572496502774">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.035 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='10363465228311346216'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10363465228311346216">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.078 ***</b>
+Set list for subscription, to, [presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.078 ***</b>
+SENT:
+&lt;iq type='set'
+    id='15408075080629668245'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='3391871263500449153'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-out/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"15408075080629668245">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"3391871263500449153">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.081 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push15504912606155052749'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='3391871263500449153'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push15504912606155052749">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"3391871263500449153">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.081 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='15408075080629668245'/>
+
+#iq{id = <<"15408075080629668245">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.081 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push15504912606155052749'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push15504912606155052749">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.082 ***</b>
+SENT:
+&lt;iq type='set'
+    id='9523892522172718583'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='3391871263500449153'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"9523892522172718583">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"3391871263500449153">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.125 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='9523892522172718583'/>
+
+#iq{id = <<"9523892522172718583">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.125 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='2936707337693282325'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"2936707337693282325">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"sqlite.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"sqlite.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.170 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='4472361095838719947'/>
+
+#presence{id = <<"4472361095838719947">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"sqlite.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"sqlite.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.170 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='9738042561443445820'/>
+
+#iq{id = <<"9738042561443445820">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.170 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='14230633378029348698'/>
+
+#iq{id = <<"14230633378029348698">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.170 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='17558132969989070902'/>
+
+#iq{id = <<"17558132969989070902">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.170 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='5475607241614013164'/>
+
+#iq{id = <<"5475607241614013164">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.171 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='11229339738536724736'/>
+
+#message{id = <<"11229339738536724736">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.171 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='15514600719808821575'/>
+
+#message{id = <<"15514600719808821575">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.171 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='822045199330273326'/>
+
+#message{id = <<"822045199330273326">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.171 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='7376533713271522468'/>
+
+#message{id = <<"7376533713271522468">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.171 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='11629293626030996678'/>
+
+#message{id = <<"11629293626030996678">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"sqlite.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"sqlite.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.171 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='12239282268033938589'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"12239282268033938589">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.172 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='12239282268033938589'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"12239282268033938589">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.172 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='14823416988651923586'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14823416988651923586">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.173 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='14823416988651923586'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"14823416988651923586">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.173 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='11673333677395444653'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"11673333677395444653">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.173 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='470326051852668626'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"470326051852668626">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.173 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='5891543388728161219'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"5891543388728161219">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.173 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='15826476563027481168'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"15826476563027481168">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.174 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='3385188580599638407'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3385188580599638407">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.174 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='14762387870025154493'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14762387870025154493">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.174 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='6027813475585824396'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6027813475585824396">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.174 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='12916688695283772431'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12916688695283772431">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.174 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='16313454553493559801'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16313454553493559801">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.219 ***</b>
+Set list for subscription, to, [iq,message,presence_in,presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.219 ***</b>
+SENT:
+&lt;iq type='set'
+    id='7848800250018739313'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='944429273879735105'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+        &lt;message/>
+        &lt;presence-out/>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"7848800250018739313">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"944429273879735105">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = true,
+                               presence_in = true,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.222 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push3301523601794484770'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='944429273879735105'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push3301523601794484770">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"944429273879735105">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.222 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='7848800250018739313'/>
+
+#iq{id = <<"7848800250018739313">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.222 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push3301523601794484770'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push3301523601794484770">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.222 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10539165211048670673'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='944429273879735105'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10539165211048670673">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"944429273879735105">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.265 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='10539165211048670673'/>
+
+#iq{id = <<"10539165211048670673">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.353 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='3116635329225108747'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"3116635329225108747">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.354 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='3116635329225108747'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"3116635329225108747">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.354 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='6726572054992688720'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"6726572054992688720">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='6726572054992688720'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"6726572054992688720">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='13258718248869277675'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13258718248869277675">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='16746293438613699561'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"16746293438613699561">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='17614285461172481811'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"17614285461172481811">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='17678781534909629695'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"17678781534909629695">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='17062720736583600722'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17062720736583600722">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='5494138464565254401'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5494138464565254401">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.355 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='7947467132926442214'
+         xmlns='jabber:client'/>
+
+#message{id = <<"7947467132926442214">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.356 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='631949731349996447'
+         xmlns='jabber:client'/>
+
+#message{id = <<"631949731349996447">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.356 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='1266729975767072235'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1266729975767072235">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.399 ***</b>
+Set list for subscription, to, []
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.399 ***</b>
+SENT:
+&lt;iq type='set'
+    id='16230558518388634715'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='14379914029151005381'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'/>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"16230558518388634715">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"14379914029151005381">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.402 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push5453300378632307029'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='14379914029151005381'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push5453300378632307029">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"14379914029151005381">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.402 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='16230558518388634715'/>
+
+#iq{id = <<"16230558518388634715">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.402 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push5453300378632307029'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push5453300378632307029">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.402 ***</b>
+SENT:
+&lt;iq type='set'
+    id='11208848866111698826'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='14379914029151005381'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"11208848866111698826">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"14379914029151005381">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.445 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='result'
+    id='11208848866111698826'/>
+
+#iq{id = <<"11208848866111698826">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"sqlite.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.534 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='9000806151044838098'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"9000806151044838098">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.534 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='9000806151044838098'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"9000806151044838098">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.534 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='3756558324597305332'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"3756558324597305332">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.535 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='3756558324597305332'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"3756558324597305332">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.535 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='9686488054795456898'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"9686488054795456898">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.535 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='4938110416074895030'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"4938110416074895030">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.535 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='419939293798882928'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"419939293798882928">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.580 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='419939293798882928'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"419939293798882928">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.580 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='15058008355863526108'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"15058008355863526108">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"sqlite.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"sqlite.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.581 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='15058008355863526108'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"15058008355863526108">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.581 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='5760506004665240446'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5760506004665240446">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.581 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='11153160638848489327'
+         xmlns='jabber:client'/>
+
+#message{id = <<"11153160638848489327">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.624 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='11153160638848489327'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"11153160638848489327">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.624 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='8324537272500383235'
+         xmlns='jabber:client'/>
+
+#message{id = <<"8324537272500383235">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"sqlite.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"sqlite.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.625 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='8324537272500383235'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"8324537272500383235">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.625 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='3192068889870937076'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"3192068889870937076">>,type = error,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.625 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribe'
+          id='9463031571804565029'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"9463031571804565029">>,type = subscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.625 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribed'
+          id='12111500662252828047'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"12111500662252828047">>,type = subscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.669 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='9463031571804565029'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"9463031571804565029">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.673 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push15712626140850821292'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='4b11f11d122f82ff403bd2d6cc38d17b7eae6d0a'>
+    &lt;item subscription='both'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push15712626140850821292">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"sqlite.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"sqlite.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = both,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"4b11f11d122f82ff403bd2d6cc38d17b7eae6d0a">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.673 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribe'
+          id='3885726632491244922'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"3885726632491244922">>,type = unsubscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.680 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push3409093857995267824'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='a5518ade8a6d29f2995d7f1035665651673aeb2b'>
+    &lt;item subscription='from'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push3409093857995267824">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"sqlite.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"sqlite.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = from,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"a5518ade8a6d29f2995d7f1035665651673aeb2b">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.680 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribed'
+          id='11715958534958354908'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"11715958534958354908">>,type = unsubscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"sqlite.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"sqlite.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:56:06.686 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'
+    type='set'
+    id='push8220204818649008546'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='8669da4d9d80ee6a6e2916685402d49bd8c37015'>
+    &lt;item subscription='none'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@sqlite.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push8220204818649008546">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"sqlite.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"sqlite.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"sqlite.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"sqlite.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = none,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"8669da4d9d80ee6a6e2916685402d49bd8c37015">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2024-07-02 10:56:06
+=== successfully completed test case
+=== Returned value: [{receiver,undefined},
+                     {rosterver,true},
+                     {sm,true},
+                     {compression,[&lt;&lt;"zlib"&gt;&gt;]},
+                     {stream_id,&lt;&lt;"4059361614623661428"&gt;&gt;},
+                     {sasl,#Fun&lt;suite.8.132306372&gt;},
+                     {legacy_auth,true},
+                     {register,true},
+                     {starttls,true},
+                     {mechs,
+                         [&lt;&lt;"DIGEST-MD5"&gt;&gt;,&lt;&lt;"PLAIN"&gt;&gt;,&lt;&lt;"SCRAM-SHA-512"&gt;&gt;,
+                          &lt;&lt;"SCRAM-SHA-256"&gt;&gt;,&lt;&lt;"SCRAM-SHA-1"&gt;&gt;,
+                          &lt;&lt;"X-OAUTH2"&gt;&gt;]},
+                     {peer,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"sqlite.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"sqlite.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {peer_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {user,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+                     {slave,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"sqlite.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"sqlite.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {master,
+                         {jid,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"sqlite.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"sqlite.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {mode,master},
+                     {watchdog,&lt;0.32136.0&gt;},
+                     {event_relay,&lt;0.32126.0&gt;},
+                     {server,&lt;&lt;"sqlite.localhost"&gt;&gt;},
+                     {server_port,5222},
+                     {server_host,"localhost"},
+                     {component_port,5270},
+                     {s2s_port,5269},
+                     {master_nick,
+                         &lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {room_subject,
+                         &lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {certfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+                     {persistent_room,true},
+                     {anonymous,false},
+                     {type,client},
+                     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+                     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+                     {stream_version,{1,0}},
+                     {stream_from,&lt;&lt;&gt;&gt;},
+                     {db_xmlns,&lt;&lt;&gt;&gt;},
+                     {lang,&lt;&lt;"en"&gt;&gt;},
+                     {base_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+                     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {pubsub_node_title,
+                         &lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {master_resource,
+                         &lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_resource,
+                         &lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {update_sql,false},
+                     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+                     {tc_logfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/ejabberd_suite.privacy_deny_sub_to_master.46276.html"},
+                     {tc_group_properties,
+                         [{name,privacy_deny_sub_to},parallel]},
+                     {tc_group_path,
+                         [[{name,privacy_master_slave},sequence],
+                          [{name,sqlite},sequence]]},
+                     {data_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+                     {priv_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/log_private/"}]

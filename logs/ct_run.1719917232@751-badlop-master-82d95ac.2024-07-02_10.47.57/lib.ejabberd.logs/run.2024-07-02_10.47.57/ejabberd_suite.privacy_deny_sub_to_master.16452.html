@@ -1,0 +1,4099 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test ejabberd_SUITE:privacy_deny_sub_to_master result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="ejabberd_suite.src.html#privacy_deny_sub_to_master-1">ejabberd_SUITE:privacy_deny_sub_to_master/1</a> (click for source code)
+
+=== Config value:
+
+    [{event_relay,&lt;0.25490.0&gt;},
+     {watchdog,&lt;0.25489.0&gt;},
+     {server,&lt;&lt;"redis.localhost"&gt;&gt;},
+     {server_port,5222},
+     {server_host,"localhost"},
+     {component_port,5270},
+     {s2s_port,5269},
+     {user,&lt;&lt;"test_single!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+     {nick,&lt;&lt;"nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_nick,&lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {room_subject,&lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {certfile,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+     {persistent_room,true},
+     {anonymous,false},
+     {type,client},
+     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+     {stream_version,{1,0}},
+     {stream_id,&lt;&lt;&gt;&gt;},
+     {stream_from,&lt;&lt;&gt;&gt;},
+     {db_xmlns,&lt;&lt;&gt;&gt;},
+     {mechs,[]},
+     {rosterver,false},
+     {lang,&lt;&lt;"en"&gt;&gt;},
+     {base_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+     {receiver,undefined},
+     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {pubsub_node_title,&lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_resource,&lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_resource,&lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {update_sql,false},
+     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+     {tc_logfile,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/ejabberd_suite.privacy_deny_sub_to_master.16452.html"},
+     {tc_group_properties,[{name,privacy_deny_sub_to},parallel]},
+     {tc_group_path,[[{name,privacy_master_slave},sequence],
+                     [{name,redis},sequence]]},
+     {data_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+     {priv_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/log_private/"}]
+
+=== Current directory is "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57"
+
+=== Started at 2024-07-02 10:51:00
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.927 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='redis.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"redis.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"redis.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.928 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='11044346808353334678'
+               version='1.0'
+               xml:lang='en'
+               from='redis.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"redis.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"redis.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"11044346808353334678">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.928 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;mechanisms xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>
+    &lt;mechanism>DIGEST-MD5&lt;/mechanism>
+    &lt;mechanism>PLAIN&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-512&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-256&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-1&lt;/mechanism>
+    &lt;mechanism>X-OAUTH2&lt;/mechanism>
+  &lt;/mechanisms>
+  &lt;starttls xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>
+  &lt;register xmlns='http://jabber.org/features/iq-register'/>
+  &lt;auth xmlns='http://jabber.org/features/iq-auth'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#sasl_mechanisms{
+             list =
+                 [<<"DIGEST-MD5">>,<<"PLAIN">>,<<"SCRAM-SHA-512">>,
+                  <<"SCRAM-SHA-256">>,<<"SCRAM-SHA-1">>,<<"X-OAUTH2">>]},
+         #starttls{required = false},
+         #feature_register{},
+         #legacy_auth_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.928 ***</b>
+SENT:
+&lt;auth mechanism='PLAIN'
+      xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>dGVzdF9tYXN0ZXIhIyQlXiooKWB+Ky07Xz1bXXt9fFxAcmVkaXMubG9jYWxob3N0AHRlc3RfbWFzdGVyISMkJV4qKClgfistO189W117fXxcAHBhc3N3b3JkIUAjJCVeJiooKSciYH48PistLzs6Xz1bXXt9fFw=&lt;/auth>
+
+#sasl_auth{mechanism = <<"PLAIN">>,
+           text = <<116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,94,
+                    42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,64,
+                    114,101,100,105,115,46,108,111,99,97,108,104,111,115,116,
+                    0,116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,
+                    94,42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,0,
+                    112,97,115,115,119,111,114,100,33,64,35,36,37,94,38,42,40,
+                    41,39,34,96,126,60,62,43,45,47,59,58,95,61,91,93,123,125,
+                    124,92>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.929 ***</b>
+RECV:
+&lt;success xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+
+#sasl_success{text = <<>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.929 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='redis.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"redis.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"redis.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.929 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='5467885854317606742'
+               version='1.0'
+               xml:lang='en'
+               from='redis.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"redis.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"redis.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"5467885854317606742">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.930 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;compression xmlns='http://jabber.org/features/compress'>
+    &lt;method>zlib&lt;/method>
+  &lt;/compression>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'/>
+  &lt;session xmlns='urn:ietf:params:xml:ns:xmpp-session'>
+    &lt;optional/>
+  &lt;/session>
+  &lt;c xmlns='http://jabber.org/protocol/caps'
+     ver='9dw1fKaE0crSfkc9KTtBadLPkJA='
+     node='http://www.process-one.net/en/ejabberd/'
+     hash='sha-1'/>
+  &lt;sm xmlns='urn:xmpp:sm:2'/>
+  &lt;sm xmlns='urn:xmpp:sm:3'/>
+  &lt;ver xmlns='urn:xmpp:features:rosterver'/>
+  &lt;csi xmlns='urn:xmpp:csi:0'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#compression{methods = [<<"zlib">>]},
+         #bind{jid = undefined,resource = <<>>},
+         #xmpp_session{optional = true},
+         #caps{
+             node = <<"http://www.process-one.net/en/ejabberd/">>,
+             version = <<"9dw1fKaE0crSfkc9KTtBadLPkJA=">>,hash = <<"sha-1">>,
+             exts = []},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:2">>},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:3">>},
+         #rosterver_feature{},
+         #feature_csi{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.930 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10956037626569508798'
+    xmlns='jabber:client'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;resource>resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/resource>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"10956037626569508798">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#bind{jid = undefined,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.932 ***</b>
+RECV:
+&lt;iq type='result'
+    id='10956037626569508798'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;jid>test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/jid>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"10956037626569508798">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,
+    sub_els =
+        [#bind{
+             jid =
+                 #jid{
+                     user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource =
+                         <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+             resource = <<>>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.932 ***</b>
+Set list for subscription, to, [iq]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.933 ***</b>
+SENT:
+&lt;iq type='set'
+    id='18076715763695970924'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='4315783200236743849'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"18076715763695970924">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"4315783200236743849">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = true,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.934 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push14325310804989101271'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='4315783200236743849'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push14325310804989101271">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"4315783200236743849">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.934 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='18076715763695970924'/>
+
+#iq{id = <<"18076715763695970924">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.934 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push14325310804989101271'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push14325310804989101271">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.934 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10596914196541193925'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='4315783200236743849'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10596914196541193925">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"4315783200236743849">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.976 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='10596914196541193925'/>
+
+#iq{id = <<"10596914196541193925">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:00.977 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='12531484774607649769'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"12531484774607649769">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"redis.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"redis.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.020 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='3900512335768771841'/>
+
+#presence{id = <<"3900512335768771841">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"redis.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"redis.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.023 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='4230616103295600074'/>
+
+#message{id = <<"4230616103295600074">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.065 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='3759879081484775750'/>
+
+#message{id = <<"3759879081484775750">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.065 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='12073321136973995276'/>
+
+#message{id = <<"12073321136973995276">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.065 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='6169009971801714274'/>
+
+#message{id = <<"6169009971801714274">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.065 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='14892285889173556517'/>
+
+#message{id = <<"14892285889173556517">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='13985771281723631471'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13985771281723631471">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='2680460994235207912'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2680460994235207912">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='13647805332200741929'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13647805332200741929">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='12602622760563156101'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12602622760563156101">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='4160746902836324546'
+         xmlns='jabber:client'/>
+
+#message{id = <<"4160746902836324546">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='9796830654280204465'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9796830654280204465">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='16658582999006742012'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16658582999006742012">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.066 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='1995313412494615592'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1995313412494615592">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.067 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='274765135194684664'
+         xmlns='jabber:client'/>
+
+#message{id = <<"274765135194684664">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.110 ***</b>
+Set list for subscription, to, [message]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.110 ***</b>
+SENT:
+&lt;iq type='set'
+    id='17111567015060463869'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1220276625869990026'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;message/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"17111567015060463869">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"1220276625869990026">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.111 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push11663456736063127908'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1220276625869990026'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push11663456736063127908">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"1220276625869990026">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.111 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='17111567015060463869'/>
+
+#iq{id = <<"17111567015060463869">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.111 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push11663456736063127908'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push11663456736063127908">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.112 ***</b>
+SENT:
+&lt;iq type='set'
+    id='15910855663709297784'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='1220276625869990026'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"15910855663709297784">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"1220276625869990026">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.156 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='15910855663709297784'/>
+
+#iq{id = <<"15910855663709297784">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.157 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='494802653250643710'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"494802653250643710">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"redis.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"redis.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.202 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='1510689879646026069'/>
+
+#presence{id = <<"1510689879646026069">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"redis.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"redis.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.202 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='5109838663199085877'/>
+
+#iq{id = <<"5109838663199085877">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.202 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='2152030567700777015'/>
+
+#iq{id = <<"2152030567700777015">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.202 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='3275605720555815166'/>
+
+#iq{id = <<"3275605720555815166">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.202 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='5690601326245280009'/>
+
+#iq{id = <<"5690601326245280009">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.203 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='15715802184078618836'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"15715802184078618836">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.203 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='7036455620926673247'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"7036455620926673247">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.203 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2407048784428556955'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2407048784428556955">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.203 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='8064674710493434550'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"8064674710493434550">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.204 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='13016447565202784485'
+         xmlns='jabber:client'/>
+
+#message{id = <<"13016447565202784485">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.204 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='10775711081234207109'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10775711081234207109">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.204 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='17425433217612137861'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17425433217612137861">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.204 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='10900370309385820131'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10900370309385820131">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.204 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='5036599688765430244'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5036599688765430244">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.247 ***</b>
+Set list for subscription, to, [presence_in]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.247 ***</b>
+SENT:
+&lt;iq type='set'
+    id='623341973367660778'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='14143483660504374844'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"623341973367660778">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"14143483660504374844">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = true,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.248 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push9105648639347506427'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='14143483660504374844'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push9105648639347506427">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"14143483660504374844">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.248 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='623341973367660778'/>
+
+#iq{id = <<"623341973367660778">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.248 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push9105648639347506427'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push9105648639347506427">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.248 ***</b>
+SENT:
+&lt;iq type='set'
+    id='12664667452072550089'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='14143483660504374844'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"12664667452072550089">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"14143483660504374844">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.292 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='12664667452072550089'/>
+
+#iq{id = <<"12664667452072550089">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.338 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='13430385209688820976'/>
+
+#iq{id = <<"13430385209688820976">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.338 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='14315157419586647748'/>
+
+#iq{id = <<"14315157419586647748">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='13825564862920430658'/>
+
+#iq{id = <<"13825564862920430658">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='13181622558463491030'/>
+
+#iq{id = <<"13181622558463491030">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='5742840268688348221'/>
+
+#message{id = <<"5742840268688348221">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='17863640186749487791'/>
+
+#message{id = <<"17863640186749487791">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='727958004839875510'/>
+
+#message{id = <<"727958004839875510">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='1885039784333771473'/>
+
+#message{id = <<"1885039784333771473">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.339 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='1457103835710966069'/>
+
+#message{id = <<"1457103835710966069">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='7267578748298799183'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"7267578748298799183">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='4595436512610272413'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"4595436512610272413">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14182308252026924190'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14182308252026924190">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='9853082354141255976'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"9853082354141255976">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='4598245248011039566'
+         xmlns='jabber:client'/>
+
+#message{id = <<"4598245248011039566">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='2975461633896225574'
+         xmlns='jabber:client'/>
+
+#message{id = <<"2975461633896225574">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.340 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='11441656178294761110'
+         xmlns='jabber:client'/>
+
+#message{id = <<"11441656178294761110">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.341 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='5145857980877416087'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5145857980877416087">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.341 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='4271644706676166169'
+         xmlns='jabber:client'/>
+
+#message{id = <<"4271644706676166169">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.387 ***</b>
+Set list for subscription, to, [presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.387 ***</b>
+SENT:
+&lt;iq type='set'
+    id='204725116548856864'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='15875987597439547372'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-out/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"204725116548856864">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"15875987597439547372">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.388 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push2500309001773609117'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='15875987597439547372'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push2500309001773609117">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"15875987597439547372">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.389 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='204725116548856864'/>
+
+#iq{id = <<"204725116548856864">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.389 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push2500309001773609117'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push2500309001773609117">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.389 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10789134302715152264'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='15875987597439547372'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10789134302715152264">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"15875987597439547372">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.432 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='10789134302715152264'/>
+
+#iq{id = <<"10789134302715152264">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.433 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='1569869466677730709'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"1569869466677730709">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"redis.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"redis.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.478 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='1670807300658895077'/>
+
+#presence{id = <<"1670807300658895077">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"redis.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"redis.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.478 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='14412700761740995325'/>
+
+#iq{id = <<"14412700761740995325">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='10424763896635010701'/>
+
+#iq{id = <<"10424763896635010701">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2401699547673750982'/>
+
+#iq{id = <<"2401699547673750982">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='1349042312167513157'/>
+
+#iq{id = <<"1349042312167513157">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='14378921498982268384'/>
+
+#message{id = <<"14378921498982268384">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='11563989807796917910'/>
+
+#message{id = <<"11563989807796917910">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='9558323469056023649'/>
+
+#message{id = <<"9558323469056023649">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.479 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='8434137645776574885'/>
+
+#message{id = <<"8434137645776574885">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.480 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='5129447544406029954'/>
+
+#message{id = <<"5129447544406029954">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"redis.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"redis.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.480 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='14147104082872148851'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14147104082872148851">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.480 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='14147104082872148851'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"14147104082872148851">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.481 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='14922103852375696483'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14922103852375696483">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.481 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='14922103852375696483'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"14922103852375696483">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.481 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='18197018805067230608'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"18197018805067230608">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.481 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='15341362566232869068'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"15341362566232869068">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.482 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='1688432567857420177'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"1688432567857420177">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.482 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='12915749155055175020'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12915749155055175020">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.482 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='17744353665792964936'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17744353665792964936">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.482 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='14189810550648905399'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14189810550648905399">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.482 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='6315843263698810264'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6315843263698810264">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.483 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='935392982238025312'
+         xmlns='jabber:client'/>
+
+#message{id = <<"935392982238025312">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.483 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='6491561324964501755'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6491561324964501755">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.526 ***</b>
+Set list for subscription, to, [iq,message,presence_in,presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.526 ***</b>
+SENT:
+&lt;iq type='set'
+    id='9163914305768798608'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13475073447939414945'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+        &lt;message/>
+        &lt;presence-out/>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"9163914305768798608">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"13475073447939414945">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = true,
+                               presence_in = true,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.527 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push1025725422952955737'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13475073447939414945'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push1025725422952955737">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"13475073447939414945">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.527 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='9163914305768798608'/>
+
+#iq{id = <<"9163914305768798608">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.527 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push1025725422952955737'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push1025725422952955737">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.528 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10453026424281244977'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='13475073447939414945'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10453026424281244977">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"13475073447939414945">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.572 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='10453026424281244977'/>
+
+#iq{id = <<"10453026424281244977">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.662 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='10346474375237596970'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"10346474375237596970">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.662 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='10346474375237596970'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"10346474375237596970">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.662 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='304860469597661993'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"304860469597661993">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.663 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='304860469597661993'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"304860469597661993">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.663 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='2126627123956286288'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2126627123956286288">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.663 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='13346105353825723953'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13346105353825723953">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.663 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='8216963319467858654'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"8216963319467858654">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.663 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='4218399601848439912'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"4218399601848439912">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.664 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='17235358798355739072'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17235358798355739072">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.664 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='16554081499068065200'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16554081499068065200">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.664 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='2923922972585027546'
+         xmlns='jabber:client'/>
+
+#message{id = <<"2923922972585027546">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.664 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='1202472310804688287'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1202472310804688287">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.664 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='6783965765844782839'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6783965765844782839">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.706 ***</b>
+Set list for subscription, to, []
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.706 ***</b>
+SENT:
+&lt;iq type='set'
+    id='14954187047497675614'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13383958908271378153'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'/>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"14954187047497675614">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"13383958908271378153">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.707 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push2211093614737723661'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='13383958908271378153'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push2211093614737723661">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"13383958908271378153">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.707 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='14954187047497675614'/>
+
+#iq{id = <<"14954187047497675614">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.707 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push2211093614737723661'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push2211093614737723661">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.707 ***</b>
+SENT:
+&lt;iq type='set'
+    id='7696282790833495971'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='13383958908271378153'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"7696282790833495971">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"13383958908271378153">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.748 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='result'
+    id='7696282790833495971'/>
+
+#iq{id = <<"7696282790833495971">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"redis.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"redis.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.837 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='4491651172281712355'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"4491651172281712355">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.838 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='4491651172281712355'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"4491651172281712355">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.838 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='960239974867628020'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"960239974867628020">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.839 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='960239974867628020'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"960239974867628020">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.839 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='13926660587292529395'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13926660587292529395">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.839 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='2326920040998791457'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2326920040998791457">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.839 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='8652152833151048594'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"8652152833151048594">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.880 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='8652152833151048594'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"8652152833151048594">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.880 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='14986452894340559197'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"14986452894340559197">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"redis.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"redis.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.881 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14986452894340559197'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"14986452894340559197">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.881 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='14848026844490512831'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14848026844490512831">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.881 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='3525374585738666140'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3525374585738666140">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.924 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='3525374585738666140'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"3525374585738666140">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.924 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='9248004721000938299'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9248004721000938299">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"redis.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"redis.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.925 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='9248004721000938299'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"9248004721000938299">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.925 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='8032161792851831873'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"8032161792851831873">>,type = error,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.925 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribe'
+          id='5915000077674123747'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"5915000077674123747">>,type = subscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.925 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribed'
+          id='5832328415617249956'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"5832328415617249956">>,type = subscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.968 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='5915000077674123747'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"5915000077674123747">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.970 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push6382883665838577493'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='065d33292d0e7c020a81deb85dde9489c05af522'>
+    &lt;item subscription='both'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push6382883665838577493">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"redis.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"redis.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = both,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"065d33292d0e7c020a81deb85dde9489c05af522">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.970 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribe'
+          id='13132395412048169488'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"13132395412048169488">>,type = unsubscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.973 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push11438715965109650023'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='2cc0cb9f0719ad96e32f6d9bfd18f5c7fc9f8eb7'>
+    &lt;item subscription='from'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push11438715965109650023">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"redis.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"redis.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = from,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"2cc0cb9f0719ad96e32f6d9bfd18f5c7fc9f8eb7">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.973 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribed'
+          id='9311422659207836946'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"9311422659207836946">>,type = unsubscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"redis.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"redis.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:51:01.974 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@redis.localhost'
+    type='set'
+    id='push15117188597701275123'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='3232afe63160b9272953bf195f234b799f8bc13e'>
+    &lt;item subscription='none'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@redis.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push15117188597701275123">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"redis.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"redis.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"redis.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"redis.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = none,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"3232afe63160b9272953bf195f234b799f8bc13e">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2024-07-02 10:51:02
+=== successfully completed test case
+=== Returned value: [{receiver,undefined},
+                     {csi,true},
+                     {rosterver,true},
+                     {sm,true},
+                     {compression,[&lt;&lt;"zlib"&gt;&gt;]},
+                     {stream_id,&lt;&lt;"5467885854317606742"&gt;&gt;},
+                     {sasl,#Fun&lt;suite.8.132306372&gt;},
+                     {legacy_auth,true},
+                     {register,true},
+                     {starttls,true},
+                     {mechs,
+                         [&lt;&lt;"DIGEST-MD5"&gt;&gt;,&lt;&lt;"PLAIN"&gt;&gt;,&lt;&lt;"SCRAM-SHA-512"&gt;&gt;,
+                          &lt;&lt;"SCRAM-SHA-256"&gt;&gt;,&lt;&lt;"SCRAM-SHA-1"&gt;&gt;,
+                          &lt;&lt;"X-OAUTH2"&gt;&gt;]},
+                     {peer,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"redis.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"redis.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {peer_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {user,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+                     {slave,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"redis.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"redis.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {master,
+                         {jid,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"redis.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"redis.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {mode,master},
+                     {watchdog,&lt;0.25499.0&gt;},
+                     {event_relay,&lt;0.25490.0&gt;},
+                     {server,&lt;&lt;"redis.localhost"&gt;&gt;},
+                     {server_port,5222},
+                     {server_host,"localhost"},
+                     {component_port,5270},
+                     {s2s_port,5269},
+                     {master_nick,
+                         &lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {room_subject,
+                         &lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {certfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+                     {persistent_room,true},
+                     {anonymous,false},
+                     {type,client},
+                     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+                     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+                     {stream_version,{1,0}},
+                     {stream_from,&lt;&lt;&gt;&gt;},
+                     {db_xmlns,&lt;&lt;&gt;&gt;},
+                     {lang,&lt;&lt;"en"&gt;&gt;},
+                     {base_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+                     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {pubsub_node_title,
+                         &lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {master_resource,
+                         &lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_resource,
+                         &lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {update_sql,false},
+                     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+                     {tc_logfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/ejabberd_suite.privacy_deny_sub_to_master.16452.html"},
+                     {tc_group_properties,
+                         [{name,privacy_deny_sub_to},parallel]},
+                     {tc_group_path,
+                         [[{name,privacy_master_slave},sequence],
+                          [{name,redis},sequence]]},
+                     {data_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+                     {priv_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/log_private/"}]

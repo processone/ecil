@@ -1,0 +1,4098 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test ejabberd_SUITE:privacy_deny_sub_to_master result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="ejabberd_suite.src.html#privacy_deny_sub_to_master-1">ejabberd_SUITE:privacy_deny_sub_to_master/1</a> (click for source code)
+
+=== Config value:
+
+    [{event_relay,&lt;0.23251.0&gt;},
+     {watchdog,&lt;0.23250.0&gt;},
+     {server,&lt;&lt;"mnesia.localhost"&gt;&gt;},
+     {server_port,5222},
+     {server_host,"localhost"},
+     {component_port,5270},
+     {s2s_port,5269},
+     {user,&lt;&lt;"test_single!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+     {nick,&lt;&lt;"nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_nick,&lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {room_subject,&lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {certfile,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+     {persistent_room,true},
+     {anonymous,false},
+     {type,client},
+     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+     {stream_version,{1,0}},
+     {stream_id,&lt;&lt;&gt;&gt;},
+     {stream_from,&lt;&lt;&gt;&gt;},
+     {db_xmlns,&lt;&lt;&gt;&gt;},
+     {mechs,[]},
+     {rosterver,false},
+     {lang,&lt;&lt;"en"&gt;&gt;},
+     {base_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+     {receiver,undefined},
+     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {pubsub_node_title,&lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_resource,&lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_resource,&lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {update_sql,false},
+     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+     {tc_logfile,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/ejabberd_suite.privacy_deny_sub_to_master.12386.html"},
+     {tc_group_properties,[{name,privacy_deny_sub_to},parallel]},
+     {tc_group_path,[[{name,privacy_master_slave},sequence],
+                     [{name,mnesia},sequence]]},
+     {data_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+     {priv_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/log_private/"}]
+
+=== Current directory is "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57"
+
+=== Started at 2024-07-02 10:49:06
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.035 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='mnesia.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"mnesia.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"mnesia.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.036 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='11767324535250022626'
+               version='1.0'
+               xml:lang='en'
+               from='mnesia.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"mnesia.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"mnesia.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"11767324535250022626">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.037 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;mechanisms xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>
+    &lt;mechanism>DIGEST-MD5&lt;/mechanism>
+    &lt;mechanism>PLAIN&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-512&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-256&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-1&lt;/mechanism>
+    &lt;mechanism>X-OAUTH2&lt;/mechanism>
+  &lt;/mechanisms>
+  &lt;starttls xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>
+  &lt;register xmlns='http://jabber.org/features/iq-register'/>
+  &lt;auth xmlns='http://jabber.org/features/iq-auth'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#sasl_mechanisms{
+             list =
+                 [<<"DIGEST-MD5">>,<<"PLAIN">>,<<"SCRAM-SHA-512">>,
+                  <<"SCRAM-SHA-256">>,<<"SCRAM-SHA-1">>,<<"X-OAUTH2">>]},
+         #starttls{required = false},
+         #feature_register{},
+         #legacy_auth_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.037 ***</b>
+SENT:
+&lt;auth mechanism='PLAIN'
+      xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>dGVzdF9tYXN0ZXIhIyQlXiooKWB+Ky07Xz1bXXt9fFxAbW5lc2lhLmxvY2FsaG9zdAB0ZXN0X21hc3RlciEjJCVeKigpYH4rLTtfPVtde318XABwYXNzd29yZCFAIyQlXiYqKCknImB+PD4rLS87Ol89W117fXxc&lt;/auth>
+
+#sasl_auth{mechanism = <<"PLAIN">>,
+           text = <<116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,94,
+                    42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,64,
+                    109,110,101,115,105,97,46,108,111,99,97,108,104,111,115,
+                    116,0,116,101,115,116,95,109,97,115,116,101,114,33,35,36,
+                    37,94,42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,
+                    0,112,97,115,115,119,111,114,100,33,64,35,36,37,94,38,42,
+                    40,41,39,34,96,126,60,62,43,45,47,59,58,95,61,91,93,123,
+                    125,124,92>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.037 ***</b>
+RECV:
+&lt;success xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+
+#sasl_success{text = <<>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.038 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='mnesia.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"mnesia.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"mnesia.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.038 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='6240297728754183852'
+               version='1.0'
+               xml:lang='en'
+               from='mnesia.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"mnesia.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"mnesia.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"6240297728754183852">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.039 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;compression xmlns='http://jabber.org/features/compress'>
+    &lt;method>zlib&lt;/method>
+  &lt;/compression>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'/>
+  &lt;session xmlns='urn:ietf:params:xml:ns:xmpp-session'>
+    &lt;optional/>
+  &lt;/session>
+  &lt;c xmlns='http://jabber.org/protocol/caps'
+     ver='9dw1fKaE0crSfkc9KTtBadLPkJA='
+     node='http://www.process-one.net/en/ejabberd/'
+     hash='sha-1'/>
+  &lt;sm xmlns='urn:xmpp:sm:2'/>
+  &lt;sm xmlns='urn:xmpp:sm:3'/>
+  &lt;ver xmlns='urn:xmpp:features:rosterver'/>
+  &lt;csi xmlns='urn:xmpp:csi:0'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#compression{methods = [<<"zlib">>]},
+         #bind{jid = undefined,resource = <<>>},
+         #xmpp_session{optional = true},
+         #caps{
+             node = <<"http://www.process-one.net/en/ejabberd/">>,
+             version = <<"9dw1fKaE0crSfkc9KTtBadLPkJA=">>,hash = <<"sha-1">>,
+             exts = []},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:2">>},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:3">>},
+         #rosterver_feature{},
+         #feature_csi{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.039 ***</b>
+SENT:
+&lt;iq type='set'
+    id='16966297072878370293'
+    xmlns='jabber:client'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;resource>resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/resource>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"16966297072878370293">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#bind{jid = undefined,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.039 ***</b>
+RECV:
+&lt;iq type='result'
+    id='16966297072878370293'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;jid>test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/jid>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"16966297072878370293">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,
+    sub_els =
+        [#bind{
+             jid =
+                 #jid{
+                     user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource =
+                         <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+             resource = <<>>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.040 ***</b>
+Set list for subscription, to, [iq]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.040 ***</b>
+SENT:
+&lt;iq type='set'
+    id='1828090893945356498'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='12807330264675335916'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"1828090893945356498">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"12807330264675335916">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = true,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.043 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push15938816712699308799'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='12807330264675335916'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push15938816712699308799">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"12807330264675335916">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.043 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='1828090893945356498'/>
+
+#iq{id = <<"1828090893945356498">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.043 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push15938816712699308799'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push15938816712699308799">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.043 ***</b>
+SENT:
+&lt;iq type='set'
+    id='9255431463354201276'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='12807330264675335916'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"9255431463354201276">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"12807330264675335916">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.084 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='9255431463354201276'/>
+
+#iq{id = <<"9255431463354201276">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.085 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='7272681363974116833'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"7272681363974116833">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mnesia.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mnesia.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.128 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='5535761520411091930'/>
+
+#presence{id = <<"5535761520411091930">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mnesia.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mnesia.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.130 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='1000827004714939584'/>
+
+#message{id = <<"1000827004714939584">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.177 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='69726238754568109'/>
+
+#message{id = <<"69726238754568109">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.177 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='15213645600035312256'/>
+
+#message{id = <<"15213645600035312256">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.177 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='5949440184959650817'/>
+
+#message{id = <<"5949440184959650817">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.177 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='7707373177996940981'/>
+
+#message{id = <<"7707373177996940981">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='6961319607843746973'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"6961319607843746973">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='12497424101547792113'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12497424101547792113">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='3121553914457033701'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"3121553914457033701">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='11927415321087188564'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"11927415321087188564">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='10187226080529088259'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10187226080529088259">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='12213229719661806426'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12213229719661806426">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='10436500968363532178'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10436500968363532178">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='17582913536072991902'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17582913536072991902">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.178 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='4270715212719911936'
+         xmlns='jabber:client'/>
+
+#message{id = <<"4270715212719911936">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.222 ***</b>
+Set list for subscription, to, [message]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.222 ***</b>
+SENT:
+&lt;iq type='set'
+    id='15258715292117077600'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='11304214319534372068'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;message/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"15258715292117077600">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"11304214319534372068">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.223 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push9477570766065250107'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='11304214319534372068'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push9477570766065250107">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"11304214319534372068">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.223 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='15258715292117077600'/>
+
+#iq{id = <<"15258715292117077600">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.223 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push9477570766065250107'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push9477570766065250107">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.224 ***</b>
+SENT:
+&lt;iq type='set'
+    id='17568275198506678572'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='11304214319534372068'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"17568275198506678572">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"11304214319534372068">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.268 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='17568275198506678572'/>
+
+#iq{id = <<"17568275198506678572">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.270 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='18290550274487596959'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"18290550274487596959">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mnesia.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mnesia.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.313 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='14449484045309491700'/>
+
+#presence{id = <<"14449484045309491700">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mnesia.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mnesia.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.313 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='6628075550158311464'/>
+
+#iq{id = <<"6628075550158311464">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.313 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='7849145357512949673'/>
+
+#iq{id = <<"7849145357512949673">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.313 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='17239100822350261108'/>
+
+#iq{id = <<"17239100822350261108">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.313 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='10042058777757609703'/>
+
+#iq{id = <<"10042058777757609703">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.314 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='16620616068916835701'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"16620616068916835701">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.314 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='8678569874015545383'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"8678569874015545383">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.314 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14643295928804072908'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14643295928804072908">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.315 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='2185565725705571102'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2185565725705571102">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.315 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='12958521780806581240'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12958521780806581240">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.315 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='1977294319641059217'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1977294319641059217">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.315 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='312542252599811103'
+         xmlns='jabber:client'/>
+
+#message{id = <<"312542252599811103">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.315 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='2772221176370376956'
+         xmlns='jabber:client'/>
+
+#message{id = <<"2772221176370376956">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.315 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='13417384269322958038'
+         xmlns='jabber:client'/>
+
+#message{id = <<"13417384269322958038">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.362 ***</b>
+Set list for subscription, to, [presence_in]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.362 ***</b>
+SENT:
+&lt;iq type='set'
+    id='11132965974062055966'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='715070497023832762'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"11132965974062055966">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"715070497023832762">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = true,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.363 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push16568862815010438190'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='715070497023832762'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push16568862815010438190">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"715070497023832762">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.363 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='11132965974062055966'/>
+
+#iq{id = <<"11132965974062055966">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.364 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push16568862815010438190'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push16568862815010438190">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.364 ***</b>
+SENT:
+&lt;iq type='set'
+    id='9207387547660750568'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='715070497023832762'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"9207387547660750568">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"715070497023832762">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.408 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='9207387547660750568'/>
+
+#iq{id = <<"9207387547660750568">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.453 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='16567801895544439085'/>
+
+#iq{id = <<"16567801895544439085">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.453 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='8615963188873557785'/>
+
+#iq{id = <<"8615963188873557785">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='3458183237068259924'/>
+
+#iq{id = <<"3458183237068259924">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='4737146773185009867'/>
+
+#iq{id = <<"4737146773185009867">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='5313787487230461834'/>
+
+#message{id = <<"5313787487230461834">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='11280027365511664621'/>
+
+#message{id = <<"11280027365511664621">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='9590844906043703506'/>
+
+#message{id = <<"9590844906043703506">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='14759786089732292478'/>
+
+#message{id = <<"14759786089732292478">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.454 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='16680002012517805826'/>
+
+#message{id = <<"16680002012517805826">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='2353511794025365838'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2353511794025365838">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='11086449282863106555'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"11086449282863106555">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14862102656825701053'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14862102656825701053">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='6778484206324543416'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"6778484206324543416">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='5537665221971973153'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5537665221971973153">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='15357739816355335057'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15357739816355335057">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='9228722419081476437'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9228722419081476437">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='8137240048761154410'
+         xmlns='jabber:client'/>
+
+#message{id = <<"8137240048761154410">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.455 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='2073733733487880706'
+         xmlns='jabber:client'/>
+
+#message{id = <<"2073733733487880706">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.499 ***</b>
+Set list for subscription, to, [presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.499 ***</b>
+SENT:
+&lt;iq type='set'
+    id='14091699406953561119'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='6732809417396061677'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-out/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"14091699406953561119">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"6732809417396061677">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.500 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push9814490335897118602'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='6732809417396061677'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push9814490335897118602">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"6732809417396061677">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.500 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='14091699406953561119'/>
+
+#iq{id = <<"14091699406953561119">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.500 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push9814490335897118602'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push9814490335897118602">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.500 ***</b>
+SENT:
+&lt;iq type='set'
+    id='18322204251357108217'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='6732809417396061677'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"18322204251357108217">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"6732809417396061677">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.544 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='18322204251357108217'/>
+
+#iq{id = <<"18322204251357108217">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.545 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='1768829600458505799'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"1768829600458505799">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mnesia.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mnesia.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.590 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='7117229861690667875'/>
+
+#presence{id = <<"7117229861690667875">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mnesia.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mnesia.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.590 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='12963459591109311238'/>
+
+#iq{id = <<"12963459591109311238">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.590 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='8207768114976782121'/>
+
+#iq{id = <<"8207768114976782121">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.590 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='8422820437009326070'/>
+
+#iq{id = <<"8422820437009326070">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.590 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='4647959037219970771'/>
+
+#iq{id = <<"4647959037219970771">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.591 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='16982716852881471820'/>
+
+#message{id = <<"16982716852881471820">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.591 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='6217881893079137257'/>
+
+#message{id = <<"6217881893079137257">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.591 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='8167392800762887113'/>
+
+#message{id = <<"8167392800762887113">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.591 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='15840071432914573945'/>
+
+#message{id = <<"15840071432914573945">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.591 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='16945717738126283347'/>
+
+#message{id = <<"16945717738126283347">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mnesia.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mnesia.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.591 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='615911022896334181'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"615911022896334181">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.592 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='615911022896334181'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"615911022896334181">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.592 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='14376595396390346514'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14376595396390346514">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.593 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='14376595396390346514'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"14376595396390346514">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.593 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='14868479444027786738'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14868479444027786738">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.593 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='8713957966016358921'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"8713957966016358921">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.593 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2995838461670235400'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2995838461670235400">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.593 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='6867995770782252729'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"6867995770782252729">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.594 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='9590074446691208060'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9590074446691208060">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.594 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='10433096050685283361'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10433096050685283361">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.594 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='15746753493517976358'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15746753493517976358">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.594 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='8258071043784650679'
+         xmlns='jabber:client'/>
+
+#message{id = <<"8258071043784650679">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.594 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='17992593404393594982'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17992593404393594982">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.638 ***</b>
+Set list for subscription, to, [iq,message,presence_in,presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.639 ***</b>
+SENT:
+&lt;iq type='set'
+    id='9554465898932099216'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1900635746968942233'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+        &lt;message/>
+        &lt;presence-out/>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"9554465898932099216">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"1900635746968942233">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = true,
+                               presence_in = true,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.640 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push6542557499267059202'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1900635746968942233'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push6542557499267059202">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"1900635746968942233">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.640 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='9554465898932099216'/>
+
+#iq{id = <<"9554465898932099216">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.640 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push6542557499267059202'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push6542557499267059202">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.640 ***</b>
+SENT:
+&lt;iq type='set'
+    id='12710318023393788930'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='1900635746968942233'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"12710318023393788930">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"1900635746968942233">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.684 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='12710318023393788930'/>
+
+#iq{id = <<"12710318023393788930">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.774 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='14316611242820934778'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14316611242820934778">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.774 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='14316611242820934778'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"14316611242820934778">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.774 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='11197429220851784'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"11197429220851784">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.775 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='11197429220851784'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"11197429220851784">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.775 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='15539530235894430760'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"15539530235894430760">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.775 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='4233137186791478256'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"4233137186791478256">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.775 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14142515140228390326'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14142515140228390326">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.775 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='816833120746486517'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"816833120746486517">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.776 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='17580426778233465173'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17580426778233465173">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.776 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='9599111454319168221'
+         xmlns='jabber:client'/>
+
+#message{id = <<"9599111454319168221">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.776 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='1418097086022153067'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1418097086022153067">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.776 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='10406869223010400184'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10406869223010400184">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.776 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='2809240035081482789'
+         xmlns='jabber:client'/>
+
+#message{id = <<"2809240035081482789">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.819 ***</b>
+Set list for subscription, to, []
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.819 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10253040321077303210'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='11167856570886561742'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'/>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10253040321077303210">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"11167856570886561742">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.821 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push7994719836241039237'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='11167856570886561742'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push7994719836241039237">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"11167856570886561742">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.821 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='10253040321077303210'/>
+
+#iq{id = <<"10253040321077303210">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.821 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push7994719836241039237'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push7994719836241039237">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.821 ***</b>
+SENT:
+&lt;iq type='set'
+    id='5064233985083812918'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='11167856570886561742'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"5064233985083812918">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"11167856570886561742">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.864 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='result'
+    id='5064233985083812918'/>
+
+#iq{id = <<"5064233985083812918">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mnesia.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.954 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='16334913494941888936'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"16334913494941888936">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.954 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='16334913494941888936'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"16334913494941888936">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.954 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='3771774073077328569'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"3771774073077328569">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.955 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='3771774073077328569'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"3771774073077328569">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.955 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='10758603823634731939'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"10758603823634731939">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.955 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='3150586788238269700'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"3150586788238269700">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.955 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='10188333771464261184'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"10188333771464261184">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.996 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='10188333771464261184'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"10188333771464261184">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.996 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='3009181928129890005'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"3009181928129890005">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mnesia.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mnesia.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.997 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='3009181928129890005'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"3009181928129890005">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.997 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='672158677961302133'
+         xmlns='jabber:client'/>
+
+#message{id = <<"672158677961302133">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:06.997 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='18149490685929001246'
+         xmlns='jabber:client'/>
+
+#message{id = <<"18149490685929001246">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.040 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='18149490685929001246'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"18149490685929001246">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.040 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='12516908119921930995'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12516908119921930995">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mnesia.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mnesia.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.041 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='12516908119921930995'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"12516908119921930995">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.041 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='11965612898507127761'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"11965612898507127761">>,type = error,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.041 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribe'
+          id='4594981147036044431'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"4594981147036044431">>,type = subscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.041 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribed'
+          id='15544011439229183725'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"15544011439229183725">>,type = subscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.085 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='4594981147036044431'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"4594981147036044431">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.086 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push4689211132708854185'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='e2a7b20cfee16c66e5b7643910820eb462b1113f'>
+    &lt;item subscription='both'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push4689211132708854185">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"mnesia.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"mnesia.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = both,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"e2a7b20cfee16c66e5b7643910820eb462b1113f">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.086 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribe'
+          id='840555525218497205'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"840555525218497205">>,type = unsubscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.088 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push8103847380336657291'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='00adfde1af9d1c5a6e4702e5a566556d53f0b562'>
+    &lt;item subscription='from'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push8103847380336657291">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"mnesia.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"mnesia.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = from,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"00adfde1af9d1c5a6e4702e5a566556d53f0b562">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.088 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribed'
+          id='15178296803613716921'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"15178296803613716921">>,type = unsubscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mnesia.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mnesia.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-07-02 10:49:07.090 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'
+    type='set'
+    id='push15512855909837795836'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='042ec2d09d964dd22d9ad626ce8e1fffa9337f35'>
+    &lt;item subscription='none'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@mnesia.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push15512855909837795836">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mnesia.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mnesia.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"mnesia.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"mnesia.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = none,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"042ec2d09d964dd22d9ad626ce8e1fffa9337f35">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2024-07-02 10:49:07
+=== successfully completed test case
+=== Returned value: [{receiver,undefined},
+                     {csi,true},
+                     {rosterver,true},
+                     {sm,true},
+                     {compression,[&lt;&lt;"zlib"&gt;&gt;]},
+                     {stream_id,&lt;&lt;"6240297728754183852"&gt;&gt;},
+                     {sasl,#Fun&lt;suite.8.132306372&gt;},
+                     {legacy_auth,true},
+                     {register,true},
+                     {starttls,true},
+                     {mechs,
+                         [&lt;&lt;"DIGEST-MD5"&gt;&gt;,&lt;&lt;"PLAIN"&gt;&gt;,&lt;&lt;"SCRAM-SHA-512"&gt;&gt;,
+                          &lt;&lt;"SCRAM-SHA-256"&gt;&gt;,&lt;&lt;"SCRAM-SHA-1"&gt;&gt;,
+                          &lt;&lt;"X-OAUTH2"&gt;&gt;]},
+                     {peer,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mnesia.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mnesia.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {peer_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {user,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+                     {slave,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mnesia.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mnesia.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {master,
+                         {jid,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mnesia.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mnesia.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {mode,master},
+                     {watchdog,&lt;0.23260.0&gt;},
+                     {event_relay,&lt;0.23251.0&gt;},
+                     {server,&lt;&lt;"mnesia.localhost"&gt;&gt;},
+                     {server_port,5222},
+                     {server_host,"localhost"},
+                     {component_port,5270},
+                     {s2s_port,5269},
+                     {master_nick,
+                         &lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {room_subject,
+                         &lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {certfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+                     {persistent_room,true},
+                     {anonymous,false},
+                     {type,client},
+                     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+                     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+                     {stream_version,{1,0}},
+                     {stream_from,&lt;&lt;&gt;&gt;},
+                     {db_xmlns,&lt;&lt;&gt;&gt;},
+                     {lang,&lt;&lt;"en"&gt;&gt;},
+                     {base_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+                     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {pubsub_node_title,
+                         &lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {master_resource,
+                         &lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_resource,
+                         &lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {update_sql,false},
+                     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+                     {tc_logfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/ejabberd_suite.privacy_deny_sub_to_master.12386.html"},
+                     {tc_group_properties,
+                         [{name,privacy_deny_sub_to},parallel]},
+                     {tc_group_path,
+                         [[{name,privacy_master_slave},sequence],
+                          [{name,mnesia},sequence]]},
+                     {data_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+                     {priv_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1719917232@751-badlop-master-82d95ac.2024-07-02_10.47.57/lib.ejabberd.logs/run.2024-07-02_10.47.57/log_private/"}]
