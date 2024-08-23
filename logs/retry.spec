@@ -4,7 +4,7 @@
                 codec_failure]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],[{s2s,[],[{s2s_connect,[]}]}]},
-        {cases,[test_auth_starttls,test_starttls,
+        {cases,[test_starttls,test_auth_starttls,
                 test_connect_s2s_unauthenticated_iq]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {no_db,[]},
