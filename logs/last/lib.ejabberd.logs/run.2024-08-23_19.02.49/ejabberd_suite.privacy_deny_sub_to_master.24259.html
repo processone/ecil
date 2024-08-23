@@ -1,0 +1,4098 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test ejabberd_SUITE:privacy_deny_sub_to_master result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="ejabberd_suite.src.html#privacy_deny_sub_to_master-1">ejabberd_SUITE:privacy_deny_sub_to_master/1</a> (click for source code)
+
+=== Config value:
+
+    [{event_relay,&lt;0.26630.0&gt;},
+     {watchdog,&lt;0.26629.0&gt;},
+     {server,&lt;&lt;"mysql.localhost"&gt;&gt;},
+     {server_port,5222},
+     {server_host,"localhost"},
+     {component_port,5270},
+     {s2s_port,5269},
+     {user,&lt;&lt;"test_single!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+     {nick,&lt;&lt;"nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_nick,&lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {room_subject,&lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {certfile,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+     {persistent_room,true},
+     {anonymous,false},
+     {type,client},
+     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+     {stream_version,{1,0}},
+     {stream_id,&lt;&lt;&gt;&gt;},
+     {stream_from,&lt;&lt;&gt;&gt;},
+     {db_xmlns,&lt;&lt;&gt;&gt;},
+     {mechs,[]},
+     {rosterver,false},
+     {lang,&lt;&lt;"en"&gt;&gt;},
+     {base_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+     {receiver,undefined},
+     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {pubsub_node_title,&lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {master_resource,&lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {slave_resource,&lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {update_sql,false},
+     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+     {tc_logfile,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1724439724@794-prefiks-master-8e7489c.2024-08-23_19.02.48/lib.ejabberd.logs/run.2024-08-23_19.02.49/ejabberd_suite.privacy_deny_sub_to_master.24259.html"},
+     {tc_group_properties,[{name,privacy_deny_sub_to},parallel]},
+     {tc_group_path,[[{name,privacy_master_slave},sequence],
+                     [{name,mysql},sequence]]},
+     {data_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+     {priv_dir,"/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1724439724@794-prefiks-master-8e7489c.2024-08-23_19.02.48/lib.ejabberd.logs/run.2024-08-23_19.02.49/log_private/"}]
+
+=== Current directory is "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1724439724@794-prefiks-master-8e7489c.2024-08-23_19.02.48"
+
+=== Started at 2024-08-23 19:06:53
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.866 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='mysql.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"mysql.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"mysql.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.867 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='4841033260900450085'
+               version='1.0'
+               xml:lang='en'
+               from='mysql.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"mysql.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"mysql.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"4841033260900450085">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.867 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;mechanisms xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>
+    &lt;mechanism>DIGEST-MD5&lt;/mechanism>
+    &lt;mechanism>PLAIN&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-512&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-256&lt;/mechanism>
+    &lt;mechanism>SCRAM-SHA-1&lt;/mechanism>
+    &lt;mechanism>X-OAUTH2&lt;/mechanism>
+  &lt;/mechanisms>
+  &lt;starttls xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>
+  &lt;register xmlns='http://jabber.org/features/iq-register'/>
+  &lt;auth xmlns='http://jabber.org/features/iq-auth'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#sasl_mechanisms{
+             list =
+                 [<<"DIGEST-MD5">>,<<"PLAIN">>,<<"SCRAM-SHA-512">>,
+                  <<"SCRAM-SHA-256">>,<<"SCRAM-SHA-1">>,<<"X-OAUTH2">>]},
+         #starttls{required = false},
+         #feature_register{},
+         #legacy_auth_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.867 ***</b>
+SENT:
+&lt;auth mechanism='PLAIN'
+      xmlns='urn:ietf:params:xml:ns:xmpp-sasl'>dGVzdF9tYXN0ZXIhIyQlXiooKWB+Ky07Xz1bXXt9fFxAbXlzcWwubG9jYWxob3N0AHRlc3RfbWFzdGVyISMkJV4qKClgfistO189W117fXxcAHBhc3N3b3JkIUAjJCVeJiooKSciYH48PistLzs6Xz1bXXt9fFw=&lt;/auth>
+
+#sasl_auth{mechanism = <<"PLAIN">>,
+           text = <<116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,94,
+                    42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,64,
+                    109,121,115,113,108,46,108,111,99,97,108,104,111,115,116,
+                    0,116,101,115,116,95,109,97,115,116,101,114,33,35,36,37,
+                    94,42,40,41,96,126,43,45,59,95,61,91,93,123,125,124,92,0,
+                    112,97,115,115,119,111,114,100,33,64,35,36,37,94,38,42,40,
+                    41,39,34,96,126,60,62,43,45,47,59,58,95,61,91,93,123,125,
+                    124,92>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.868 ***</b>
+RECV:
+&lt;success xmlns='urn:ietf:params:xml:ns:xmpp-sasl'/>
+
+#sasl_success{text = <<>>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.868 ***</b>
+SENT:
+&lt;stream:stream version='1.0'
+               xml:lang='en'
+               xmlns:stream='http://etherx.jabber.org/streams'
+               to='mysql.localhost'
+               xmlns='jabber:client'/>
+
+#stream_start{from = undefined,
+              to = #jid{user = <<>>,server = <<"mysql.localhost">>,
+                        resource = <<>>,luser = <<>>,
+                        lserver = <<"mysql.localhost">>,lresource = <<>>},
+              id = <<>>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.869 ***</b>
+RECV:
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams'
+               xmlns='jabber:client'
+               id='13820819744780238928'
+               version='1.0'
+               xml:lang='en'
+               from='mysql.localhost'/>
+
+#stream_start{from = #jid{user = <<>>,server = <<"mysql.localhost">>,
+                          resource = <<>>,luser = <<>>,
+                          lserver = <<"mysql.localhost">>,lresource = <<>>},
+              to = undefined,id = <<"13820819744780238928">>,
+              version = {1,0},
+              xmlns = <<"jabber:client">>,
+              stream_xmlns = <<"http://etherx.jabber.org/streams">>,
+              db_xmlns = <<>>,lang = <<"en">>}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.869 ***</b>
+RECV:
+&lt;stream:features>
+  &lt;compression xmlns='http://jabber.org/features/compress'>
+    &lt;method>zlib&lt;/method>
+  &lt;/compression>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'/>
+  &lt;session xmlns='urn:ietf:params:xml:ns:xmpp-session'>
+    &lt;optional/>
+  &lt;/session>
+  &lt;c xmlns='http://jabber.org/protocol/caps'
+     ver='RsZUO/k2xwmyvdC8vIjQDsA1fow='
+     node='http://www.process-one.net/en/ejabberd/'
+     hash='sha-1'/>
+  &lt;sm xmlns='urn:xmpp:sm:2'/>
+  &lt;sm xmlns='urn:xmpp:sm:3'/>
+  &lt;ver xmlns='urn:xmpp:features:rosterver'/>
+&lt;/stream:features>
+
+#stream_features{
+    sub_els =
+        [#compression{methods = [<<"zlib">>]},
+         #bind{jid = undefined,resource = <<>>},
+         #xmpp_session{optional = true},
+         #caps{
+             node = <<"http://www.process-one.net/en/ejabberd/">>,
+             version = <<"RsZUO/k2xwmyvdC8vIjQDsA1fow=">>,hash = <<"sha-1">>,
+             exts = []},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:2">>},
+         #feature_sm{xmlns = <<"urn:xmpp:sm:3">>},
+         #rosterver_feature{}]}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.869 ***</b>
+SENT:
+&lt;iq type='set'
+    id='17329504258709925402'
+    xmlns='jabber:client'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;resource>resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/resource>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"17329504258709925402">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#bind{jid = undefined,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.875 ***</b>
+RECV:
+&lt;iq type='result'
+    id='17329504258709925402'>
+  &lt;bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>
+    &lt;jid>test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&*()'"`~&lt;>+-/;:_=[]{}|\&lt;/jid>
+  &lt;/bind>
+&lt;/iq>
+
+#iq{id = <<"17329504258709925402">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,
+    sub_els =
+        [#bind{
+             jid =
+                 #jid{
+                     user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource =
+                         <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+             resource = <<>>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.878 ***</b>
+Set list for subscription, to, [iq]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.879 ***</b>
+SENT:
+&lt;iq type='set'
+    id='11581443043345088020'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='6652741034571646662'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"11581443043345088020">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"6652741034571646662">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = true,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.884 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push7791111731431449724'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='6652741034571646662'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push7791111731431449724">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"6652741034571646662">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.884 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='11581443043345088020'/>
+
+#iq{id = <<"11581443043345088020">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.884 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push7791111731431449724'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push7791111731431449724">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.884 ***</b>
+SENT:
+&lt;iq type='set'
+    id='13868127460243361586'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='6652741034571646662'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"13868127460243361586">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"6652741034571646662">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.927 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='13868127460243361586'/>
+
+#iq{id = <<"13868127460243361586">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.928 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='1251277575397277708'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"1251277575397277708">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mysql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mysql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.970 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='6091289669982320008'/>
+
+#presence{id = <<"6091289669982320008">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mysql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mysql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:53.973 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='4313597150198510155'/>
+
+#message{id = <<"4313597150198510155">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.014 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='3766727636728427280'/>
+
+#message{id = <<"3766727636728427280">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.014 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='12554138631497917514'/>
+
+#message{id = <<"12554138631497917514">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='9636513557560003346'/>
+
+#message{id = <<"9636513557560003346">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='13453733976816121415'/>
+
+#message{id = <<"13453733976816121415">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='10862427368916813876'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"10862427368916813876">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='12892194215697697767'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12892194215697697767">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='6580723805270489442'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"6580723805270489442">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='2602067541234965428'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2602067541234965428">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.015 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='10594693440774819033'
+         xmlns='jabber:client'/>
+
+#message{id = <<"10594693440774819033">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.016 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='1659514398593338507'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1659514398593338507">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.016 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='8906582589116827796'
+         xmlns='jabber:client'/>
+
+#message{id = <<"8906582589116827796">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.016 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='5508114492507731506'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5508114492507731506">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.016 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='60274277679024786'
+         xmlns='jabber:client'/>
+
+#message{id = <<"60274277679024786">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.061 ***</b>
+Set list for subscription, to, [message]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.061 ***</b>
+SENT:
+&lt;iq type='set'
+    id='12545096567410050584'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='12061567728760689290'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;message/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"12545096567410050584">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"12061567728760689290">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.064 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push17034957527998248930'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='12061567728760689290'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push17034957527998248930">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"12061567728760689290">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.064 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='12545096567410050584'/>
+
+#iq{id = <<"12545096567410050584">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.065 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push17034957527998248930'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push17034957527998248930">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.065 ***</b>
+SENT:
+&lt;iq type='set'
+    id='7718180434400563956'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='12061567728760689290'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"7718180434400563956">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"12061567728760689290">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.107 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='7718180434400563956'/>
+
+#iq{id = <<"7718180434400563956">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.107 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='1961062475330738509'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"1961062475330738509">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mysql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mysql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.151 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='10278553277281455146'/>
+
+#presence{id = <<"10278553277281455146">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mysql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mysql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.151 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='17632893026593820019'/>
+
+#iq{id = <<"17632893026593820019">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.151 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='17394969318878598601'/>
+
+#iq{id = <<"17394969318878598601">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.151 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='2880284020356540395'/>
+
+#iq{id = <<"2880284020356540395">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.152 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='17594773761916416185'/>
+
+#iq{id = <<"17594773761916416185">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.153 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='209720273543125654'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"209720273543125654">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.153 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='7972349384552231676'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"7972349384552231676">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.153 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='7293542608061026783'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"7293542608061026783">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.153 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='12379527207465793109'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"12379527207465793109">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.153 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='3886693106078527033'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3886693106078527033">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.153 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='1401411877028104697'
+         xmlns='jabber:client'/>
+
+#message{id = <<"1401411877028104697">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.154 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='5406806616584116373'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5406806616584116373">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.154 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='6656960573012512445'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6656960573012512445">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.154 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='17965000308431984268'
+         xmlns='jabber:client'/>
+
+#message{id = <<"17965000308431984268">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.196 ***</b>
+Set list for subscription, to, [presence_in]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.196 ***</b>
+SENT:
+&lt;iq type='set'
+    id='17739154565930572527'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='5498560239837783025'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"17739154565930572527">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"5498560239837783025">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = true,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.200 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push17657760635609905773'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='5498560239837783025'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push17657760635609905773">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"5498560239837783025">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.200 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='17739154565930572527'/>
+
+#iq{id = <<"17739154565930572527">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.200 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push17657760635609905773'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push17657760635609905773">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.200 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10911882536679018688'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='5498560239837783025'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10911882536679018688">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"5498560239837783025">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.242 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='10911882536679018688'/>
+
+#iq{id = <<"10911882536679018688">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.286 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='4291102053411728725'/>
+
+#iq{id = <<"4291102053411728725">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.287 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='17168297895919507641'/>
+
+#iq{id = <<"17168297895919507641">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.287 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14004434969838771064'/>
+
+#iq{id = <<"14004434969838771064">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.287 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='8845126679984412024'/>
+
+#iq{id = <<"8845126679984412024">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.287 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='17672850467182444765'/>
+
+#message{id = <<"17672850467182444765">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.287 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='18165401710808353743'/>
+
+#message{id = <<"18165401710808353743">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.287 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='15934865524944643506'/>
+
+#message{id = <<"15934865524944643506">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='6603625611614918691'/>
+
+#message{id = <<"6603625611614918691">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='6193741101299036259'/>
+
+#message{id = <<"6193741101299036259">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='4715127043669726068'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"4715127043669726068">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='10036414030554982275'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"10036414030554982275">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='6535074974447529818'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"6535074974447529818">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='10378234296547601186'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"10378234296547601186">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='3494494262253774525'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3494494262253774525">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.288 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='14573323507969830446'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14573323507969830446">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.289 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='12702369401748011494'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12702369401748011494">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.289 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='3608290166518087602'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3608290166518087602">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.289 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='3593496096457310987'
+         xmlns='jabber:client'/>
+
+#message{id = <<"3593496096457310987">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.331 ***</b>
+Set list for subscription, to, [presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.332 ***</b>
+SENT:
+&lt;iq type='set'
+    id='3990330758503709939'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='6673258274371807412'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-out/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"3990330758503709939">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"6673258274371807412">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.335 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push13541242060341774162'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='6673258274371807412'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push13541242060341774162">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"6673258274371807412">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.335 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='3990330758503709939'/>
+
+#iq{id = <<"3990330758503709939">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.335 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push13541242060341774162'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push13541242060341774162">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.335 ***</b>
+SENT:
+&lt;iq type='set'
+    id='11891580076843041464'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='6673258274371807412'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"11891580076843041464">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"6673258274371807412">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.379 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='11891580076843041464'/>
+
+#iq{id = <<"11891580076843041464">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.380 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='751316671103843128'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+&lt;/presence>
+
+#presence{id = <<"751316671103843128">>,type = available,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mysql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mysql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,
+          sub_els = [#vcard_xupdate{hash = undefined}],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.422 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='971935907975465020'/>
+
+#presence{id = <<"971935907975465020">>,type = unavailable,lang = <<"en">>,
+          from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      server = <<"mysql.localhost">>,
+                      resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                      luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                      lserver = <<"mysql.localhost">>,
+                      lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.422 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='12890131351312422570'/>
+
+#iq{id = <<"12890131351312422570">>,type = set,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.422 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='15565116469552001455'/>
+
+#iq{id = <<"15565116469552001455">>,type = get,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.423 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14092117910958008783'/>
+
+#iq{id = <<"14092117910958008783">>,type = error,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.423 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='14432922901530513900'/>
+
+#iq{id = <<"14432922901530513900">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,
+                resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,
+                lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.423 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='10354180503636082663'/>
+
+#message{id = <<"10354180503636082663">>,type = chat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.423 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='299739751454991830'/>
+
+#message{id = <<"299739751454991830">>,type = error,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.423 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='15132115419755758553'/>
+
+#message{id = <<"15132115419755758553">>,type = groupchat,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.423 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='1605520139784355192'/>
+
+#message{id = <<"1605520139784355192">>,type = headline,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.424 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='18339880049360283578'/>
+
+#message{id = <<"18339880049360283578">>,type = normal,lang = <<"en">>,
+         from = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     server = <<"mysql.localhost">>,
+                     resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                     luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                     lserver = <<"mysql.localhost">>,
+                     lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.424 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='6636940907397089330'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"6636940907397089330">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.424 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='6636940907397089330'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"6636940907397089330">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.424 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='14676487411014047992'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"14676487411014047992">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.425 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='14676487411014047992'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"14676487411014047992">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.425 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='2672669432404120853'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"2672669432404120853">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.425 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='3564748765502190599'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"3564748765502190599">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.425 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='7661220880212352958'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"7661220880212352958">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.426 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='14738811880686008832'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14738811880686008832">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.426 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='14417636194697248947'
+         xmlns='jabber:client'/>
+
+#message{id = <<"14417636194697248947">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.426 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='8541228540488354543'
+         xmlns='jabber:client'/>
+
+#message{id = <<"8541228540488354543">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.426 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='2191133024889659348'
+         xmlns='jabber:client'/>
+
+#message{id = <<"2191133024889659348">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.426 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='16294370527230839816'
+         xmlns='jabber:client'/>
+
+#message{id = <<"16294370527230839816">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.426 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='12989282656789706147'
+         xmlns='jabber:client'/>
+
+#message{id = <<"12989282656789706147">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.476 ***</b>
+Set list for subscription, to, [iq,message,presence_in,presence_out]
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.476 ***</b>
+SENT:
+&lt;iq type='set'
+    id='1034647497537397230'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='12509295827715256551'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'>
+        &lt;presence-in/>
+        &lt;message/>
+        &lt;presence-out/>
+        &lt;iq/>
+      &lt;/item>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"1034647497537397230">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"12509295827715256551">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = true,iq = true,
+                               presence_in = true,presence_out = true}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.480 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push2709673884239591884'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='12509295827715256551'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push2709673884239591884">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"12509295827715256551">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.481 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='1034647497537397230'/>
+
+#iq{id = <<"1034647497537397230">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.481 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push2709673884239591884'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push2709673884239591884">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.481 ***</b>
+SENT:
+&lt;iq type='set'
+    id='17340933660822470519'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='12509295827715256551'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"17340933660822470519">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"12509295827715256551">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.523 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='17340933660822470519'/>
+
+#iq{id = <<"17340933660822470519">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.611 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='10321048388389638627'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"10321048388389638627">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.612 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='10321048388389638627'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"10321048388389638627">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.612 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='10111177760708476550'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"10111177760708476550">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.612 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='10111177760708476550'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"10111177760708476550">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.612 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='16273271391172328034'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"16273271391172328034">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.612 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='5967909792948766123'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"5967909792948766123">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='14432212381097126615'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14432212381097126615">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='6035413032153595577'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"6035413032153595577">>,type = result,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='18158502378920237290'
+         xmlns='jabber:client'/>
+
+#message{id = <<"18158502378920237290">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='7543915557935798959'
+         xmlns='jabber:client'/>
+
+#message{id = <<"7543915557935798959">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='groupchat'
+         id='15912519676544816340'
+         xmlns='jabber:client'/>
+
+#message{id = <<"15912519676544816340">>,type = groupchat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='headline'
+         id='7531637282338909129'
+         xmlns='jabber:client'/>
+
+#message{id = <<"7531637282338909129">>,type = headline,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.613 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='5395574751505634693'
+         xmlns='jabber:client'/>
+
+#message{id = <<"5395574751505634693">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.657 ***</b>
+Set list for subscription, to, []
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.657 ***</b>
+SENT:
+&lt;iq type='set'
+    id='10714610066985979919'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1402574790073762490'>
+      &lt;item value='to'
+            type='subscription'
+            order='0'
+            action='deny'/>
+    &lt;/list>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"10714610066985979919">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{
+                      name = <<"1402574790073762490">>,
+                      items =
+                          [#privacy_item{
+                               order = 0,action = deny,type = subscription,
+                               value = <<"to">>,message = false,iq = false,
+                               presence_in = false,presence_out = false}]}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.660 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push9084748318979238360'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;list name='1402574790073762490'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push9084748318979238360">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#privacy_query{
+             lists =
+                 [#privacy_list{name = <<"1402574790073762490">>,items = []}],
+             default = undefined,active = undefined}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.660 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='10714610066985979919'/>
+
+#iq{id = <<"10714610066985979919">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.660 ***</b>
+SENT:
+&lt;iq type='result'
+    id='push9084748318979238360'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"push9084748318979238360">>,type = result,lang = <<>>,
+    from = undefined,to = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.660 ***</b>
+SENT:
+&lt;iq type='set'
+    id='6300099371109184590'
+    xmlns='jabber:client'>
+  &lt;query xmlns='jabber:iq:privacy'>
+    &lt;active name='1402574790073762490'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"6300099371109184590">>,type = set,lang = <<>>,from = undefined,
+    to = undefined,
+    sub_els = [#privacy_query{lists = [],default = undefined,
+                              active = <<"1402574790073762490">>}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.702 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='result'
+    id='6300099371109184590'/>
+
+#iq{id = <<"6300099371109184590">>,type = result,lang = <<"en">>,
+    from = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                server = <<"mysql.localhost">>,resource = <<>>,
+                luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+                lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to = #jid{user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.791 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          id='15595031756008792894'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"15595031756008792894">>,type = available,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.791 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='15595031756008792894'>
+  &lt;x xmlns='vcard-temp:x:update'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"15595031756008792894">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#vcard_xupdate{hash = undefined},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.792 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unavailable'
+          id='3624474954440955799'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"3624474954440955799">>,type = unavailable,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.792 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='3624474954440955799'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"3624474954440955799">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.792 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='13766952090050597651'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"13766952090050597651">>,type = error,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.793 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='result'
+    id='14495374507815957223'
+    xmlns='jabber:client'/>
+
+#iq{id = <<"14495374507815957223">>,type = result,lang = <<>>,
+    from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.793 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='set'
+    id='12910500235654525981'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"12910500235654525981">>,type = set,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.834 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='12910500235654525981'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"12910500235654525981">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.834 ***</b>
+SENT:
+&lt;iq to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='get'
+    id='11905553798141744613'
+    xmlns='jabber:client'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+&lt;/iq>
+
+#iq{id = <<"11905553798141744613">>,type = get,lang = <<>>,from = undefined,
+    to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              server = <<"mysql.localhost">>,
+              resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+              lserver = <<"mysql.localhost">>,
+              lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els = [#ping{}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.834 ***</b>
+RECV:
+&lt;iq xml:lang='en'
+    to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    type='error'
+    id='11905553798141744613'>
+  &lt;ping xmlns='urn:xmpp:ping'/>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/iq>
+
+#iq{id = <<"11905553798141744613">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#ping{},
+         #stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.835 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='631130453337493791'
+         xmlns='jabber:client'/>
+
+#message{id = <<"631130453337493791">>,type = error,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.835 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='chat'
+         id='6950293595061026614'
+         xmlns='jabber:client'/>
+
+#message{id = <<"6950293595061026614">>,type = chat,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.878 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='6950293595061026614'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"6950293595061026614">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.878 ***</b>
+SENT:
+&lt;message to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         id='211799545823751680'
+         xmlns='jabber:client'/>
+
+#message{id = <<"211799545823751680">>,type = normal,lang = <<>>,
+         from = undefined,
+         to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   server = <<"mysql.localhost">>,
+                   resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                   luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                   lserver = <<"mysql.localhost">>,
+                   lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+         subject = [],body = [],thread = undefined,sub_els = [],meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.878 ***</b>
+RECV:
+&lt;message xml:lang='en'
+         to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+         type='error'
+         id='211799545823751680'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/message>
+
+#message{
+    id = <<"211799545823751680">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    subject = [],body = [],thread = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.879 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='5938391104378884381'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"5938391104378884381">>,type = error,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.879 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribe'
+          id='8527448061228995860'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"8527448061228995860">>,type = subscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.879 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='subscribed'
+          id='11214997572847188438'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"11214997572847188438">>,type = subscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.924 ***</b>
+RECV:
+&lt;presence xml:lang='en'
+          to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          from='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='error'
+          id='8527448061228995860'>
+  &lt;error type='modify'>
+    &lt;not-acceptable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    &lt;text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'
+          xml:lang='en'>Your active privacy list has denied the routing of this stanza.&lt;/text>
+  &lt;/error>
+&lt;/presence>
+
+#presence{
+    id = <<"8527448061228995860">>,type = error,lang = <<"en">>,
+    from =
+        #jid{
+            user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    show = undefined,status = [],priority = undefined,
+    sub_els =
+        [#stanza_error{
+             type = modify,by = undefined,reason = 'not-acceptable',
+             text =
+                 [#text{
+                      lang = <<"en">>,
+                      data =
+                          <<"Your active privacy list has denied the routing of this stanza.">>}],
+             sub_els = []}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.928 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push7336929227033479364'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='0a3c2867acc0383d5a3c59e5323c3474d5c6428e'>
+    &lt;item subscription='both'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push7336929227033479364">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"mysql.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"mysql.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = both,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"0a3c2867acc0383d5a3c59e5323c3474d5c6428e">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.929 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribe'
+          id='8175509317594476564'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"8175509317594476564">>,type = unsubscribe,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.938 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push13664188083134318369'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='59244eace245e284a255048ea107c17deb1d214e'>
+    &lt;item subscription='from'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push13664188083134318369">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"mysql.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"mysql.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = from,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"59244eace245e284a255048ea107c17deb1d214e">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.938 ***</b>
+SENT:
+&lt;presence to='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+          type='unsubscribed'
+          id='9882603326759242913'
+          xmlns='jabber:client'/>
+
+#presence{id = <<"9882603326759242913">>,type = unsubscribed,lang = <<>>,
+          from = undefined,
+          to = #jid{user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    server = <<"mysql.localhost">>,
+                    resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+                    luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                    lserver = <<"mysql.localhost">>,
+                    lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+          show = undefined,status = [],priority = undefined,sub_els = [],
+          meta = #{}}
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2024-08-23 19:06:54.948 ***</b>
+RECV:
+&lt;iq to='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost/resource!@#$%^&amp;*()&apos;&quot;`~&lt;&gt;+-/;:_=[]{}|\'
+    from='test_master!#$%^*()`~+-;_=[]{}|\@mysql.localhost'
+    type='set'
+    id='push1024690685178394113'>
+  &lt;query xmlns='jabber:iq:roster'
+         ver='901701a93ab01f2c06ba2190b958ef8ffcb8747b'>
+    &lt;item subscription='none'
+          jid='test_slave!#$%^*()`~+-;_=[]{}|\@mysql.localhost'/>
+  &lt;/query>
+&lt;/iq>
+
+#iq{id = <<"push1024690685178394113">>,type = set,lang = <<>>,
+    from =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,resource = <<>>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,lresource = <<>>},
+    to =
+        #jid{
+            user = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            server = <<"mysql.localhost">>,
+            resource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>,
+            luser = <<"test_master!#$%^*()`~+-;_=[]{}|\\">>,
+            lserver = <<"mysql.localhost">>,
+            lresource = <<"resource!@#$%^&*()'\"`~<>+-/;:_=[]{}|\\">>},
+    sub_els =
+        [#roster_query{
+             items =
+                 [#roster_item{
+                      jid =
+                          #jid{
+                              user = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              server = <<"mysql.localhost">>,resource = <<>>,
+                              luser = <<"test_slave!#$%^*()`~+-;_=[]{}|\\">>,
+                              lserver = <<"mysql.localhost">>,
+                              lresource = <<>>},
+                      name = <<>>,groups = [],subscription = none,
+                      ask = undefined,mix_channel = undefined}],
+             ver = <<"901701a93ab01f2c06ba2190b958ef8ffcb8747b">>,
+             mix_annotate = false}],
+    meta = #{}}
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2024-08-23 19:06:55
+=== successfully completed test case
+=== Returned value: [{receiver,undefined},
+                     {rosterver,true},
+                     {sm,true},
+                     {compression,[&lt;&lt;"zlib"&gt;&gt;]},
+                     {stream_id,&lt;&lt;"13820819744780238928"&gt;&gt;},
+                     {sasl,#Fun&lt;suite.8.132306372&gt;},
+                     {legacy_auth,true},
+                     {register,true},
+                     {starttls,true},
+                     {mechs,
+                         [&lt;&lt;"DIGEST-MD5"&gt;&gt;,&lt;&lt;"PLAIN"&gt;&gt;,&lt;&lt;"SCRAM-SHA-512"&gt;&gt;,
+                          &lt;&lt;"SCRAM-SHA-256"&gt;&gt;,&lt;&lt;"SCRAM-SHA-1"&gt;&gt;,
+                          &lt;&lt;"X-OAUTH2"&gt;&gt;]},
+                     {peer,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mysql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mysql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {peer_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {user,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;},
+                     {slave,
+                         {jid,&lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mysql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_slave!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mysql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {master,
+                         {jid,&lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mysql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"test_master!#$%^*()`~+-;_=[]{}|\\"&gt;&gt;,
+                             &lt;&lt;"mysql.localhost"&gt;&gt;,
+                             &lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;}},
+                     {resource,&lt;&lt;"resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {nick,&lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {mode,master},
+                     {watchdog,&lt;0.26639.0&gt;},
+                     {event_relay,&lt;0.26630.0&gt;},
+                     {server,&lt;&lt;"mysql.localhost"&gt;&gt;},
+                     {server_port,5222},
+                     {server_host,"localhost"},
+                     {component_port,5270},
+                     {s2s_port,5269},
+                     {master_nick,
+                         &lt;&lt;"master_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_nick,
+                         &lt;&lt;"slave_nick!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {room_subject,
+                         &lt;&lt;"hello, world!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {certfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/cert.pem"},
+                     {persistent_room,true},
+                     {anonymous,false},
+                     {type,client},
+                     {xmlns,&lt;&lt;"jabber:client"&gt;&gt;},
+                     {ns_stream,&lt;&lt;"http://etherx.jabber.org/streams"&gt;&gt;},
+                     {stream_version,{1,0}},
+                     {stream_from,&lt;&lt;&gt;&gt;},
+                     {db_xmlns,&lt;&lt;&gt;&gt;},
+                     {lang,&lt;&lt;"en"&gt;&gt;},
+                     {base_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd"},
+                     {pubsub_node,&lt;&lt;"node!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {pubsub_node_title,
+                         &lt;&lt;"title!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {master_resource,
+                         &lt;&lt;"master_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {slave_resource,
+                         &lt;&lt;"slave_resource!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {update_sql,false},
+                     {password,&lt;&lt;"password!@#$%^&amp;*()'\"`~&lt;&gt;+-/;:_=[]{}|\\"&gt;&gt;},
+                     {backends,[mnesia,redis,mysql,pgsql,sqlite,ldap,extauth]},
+                     {tc_logfile,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1724439724@794-prefiks-master-8e7489c.2024-08-23_19.02.48/lib.ejabberd.logs/run.2024-08-23_19.02.49/ejabberd_suite.privacy_deny_sub_to_master.24259.html"},
+                     {tc_group_properties,
+                         [{name,privacy_deny_sub_to},parallel]},
+                     {tc_group_path,
+                         [[{name,privacy_master_slave},sequence],
+                          [{name,mysql},sequence]]},
+                     {data_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/lib/ejabberd/test/ejabberd_SUITE_data/"},
+                     {priv_dir,
+                         "/home/runner/work/ejabberd/ejabberd/_build/test/logs/ct_run.1724439724@794-prefiks-master-8e7489c.2024-08-23_19.02.48/lib.ejabberd.logs/run.2024-08-23_19.02.49/log_private/"}]

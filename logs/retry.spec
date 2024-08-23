@@ -4,7 +4,7 @@
                 codec_failure]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {mssql,[],[{s2s,[],[{s2s_connect,[]}]}]},
-        {cases,[test_starttls,test_auth_starttls,
+        {cases,[test_auth_starttls,test_starttls,
                 test_connect_s2s_unauthenticated_iq]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {no_db,[]},
@@ -76,4 +76,4 @@
         {cases,[s2s_optional,s2s_required]}}.
 {groups,"/home/runner/work/ejabberd/ejabberd/test",ejabberd_SUITE,
         {no_db,[],[{anonymous,[]}]},
-        {cases,[test_starttls,test_zlib]}}.
+        {cases,[test_zlib,test_starttls]}}.
